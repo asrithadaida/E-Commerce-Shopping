@@ -1,6 +1,6 @@
 # E-Commerce-Shopping
 
-### UI Design Asritha - 
+### UI Design Asritha -
 UI development in an Android application involves capturing crucial information about the layout, components, styling, and logic associated 
 with the user interface. The documentation includes an overview of the UI component or screen, detailing its purpose and functionality. It encompasses the XML 
 layout structure, specifying layout types (e.g., RelativeLayout, LinearLayout) and documenting each UI component with its attributes and purpose. Additional 
