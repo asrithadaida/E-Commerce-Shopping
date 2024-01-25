@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
 <body>    
     <div class="login-container">
         <img id="logo" src="your-logo.png" alt="Logo">
@@ -10,9 +15,20 @@
     
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
+            
+            <div>
+                <a href="#" onclick="forgotPassword()">Forgot Password?</a>
+            </div>
+
+            <button type="submit">Login</button>
         </form>
     </div>
+
+    <script>
+        function forgotPassword() {
+            // Implement your forgot password logic here
+            alert("Forgot Password functionality will be implemented here.");
+        }
+    </script>
 </body>
-</html>    
-
-
+</html>
