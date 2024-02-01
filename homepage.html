@@ -29,12 +29,12 @@
 
         
         #links {
-            text-align: center;
+            text-align: right;
         }
 
         #links a {
             display: inline-block;
-            margin: 30px;
+            margin-right: 30px;
             padding: 10px 20px;
             background-color: #1e6290; 
             color: #fff;
@@ -47,8 +47,7 @@
             background-color: #1a394e; 
         }
 
-
-        
+               
         select {
             padding: 10px;
             font-size: 16px;
@@ -63,8 +62,7 @@
         select:hover {
             background-color: #2980b9; 
         }
-        /* The above code is about filter styling */
-        /* back ground color of hover*/
+        
 
 
     </style>
@@ -74,17 +72,40 @@
     <div id="logo">
         <img src="ogo.jpeg" alt="Your Logo"> 
         <label for="shoes">Filters</label>
-        <select name="Filters" id="filters">
+        <select name="Filters" id="filters" onchange="changeCategory()">
+            <option value="Select">Select Category</option>
             <option value="Men">Men</option>
             <option value="Women">Women</option>
             <option value="Kids">Kids</option>
             
         </select>
     </div>
+
     <div id="links">
         <a href="#login">Login</a>
         <a href="#signup">Sign Up</a>
     </div>
+
+
+
+
+    
     
 </body>
 </html>
+
+<script>
+    function changeCategory() {
+        var selectedCategory = document.getElementById("filters").value;
+        if(selectedCategory==="Men"){
+            document.write("Men");
+        }    
+        if(selectedCategory==="Women"){
+            document.write("Women");
+        }  
+        if(selectedCategory==="Kids"){
+            document.write("Kids");
+        } 
+    }
+
+</script>
