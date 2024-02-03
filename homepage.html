@@ -139,7 +139,7 @@ p {
 
     <div id="links">
         <a href="#login" onclick="openLoginModel()">Login</a>
-        <a href="#signup">Sign Up</a>
+        <a href="#signup" onclick="signUpButtonClicked()">Sign Up</a>
     </div>
     
     <div id="search">
@@ -178,6 +178,14 @@ p {
             document.write("Kids");
         } 
     }
+
+    
+        function signUpButtonClicked() {
+            // Add your signup logic here
+            alert("Signup button clicked!");
+            // You can replace the alert with the actual signup code
+        }
+    
 
     function performSearch() {
             var searchInput = document.getElementById("searchInput").value;
