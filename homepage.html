@@ -18,7 +18,6 @@
             align-items: center;
             justify-content: center;
             color: #fff;
-            
         }
 
         #logo {
@@ -28,27 +27,26 @@
             width: 150px; 
         }
 
-        
         #links {
-            text-align: right;
+            text-align: center;
+            margin-top: 10px;
         }
 
         #links a {
             display: inline-block;
-            margin-right: 30px;
-            padding: 10px 20px;
+            margin: 0 10px;
+            padding: 10px;
             background-color: #1e6290; 
             color: #fff;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             border-radius: 5px;
         }
 
         #links a:hover {
-            background-color: #1a394e; 
+            background-color: #08F2F9; 
         }
 
-               
         select {
             padding: 10px;
             font-size: 16px;
@@ -64,47 +62,46 @@
             background-color: #2980b9; 
         }
         
-        #search{
+        #search {
             text-align: center;
             margin-top: 20px;
         }
 
+        .banner {
+            background-color: rgba(52, 152, 219, 0.7); /* Use rgba to add transparency */
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px; /* Adjusted padding */
+            max-width: 800px; /* Added max-width */
+            margin: 0 auto; /* Centered the banner */
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
 
-.banner {
-    background-color: #3498db;
-    color: #fff;
-    text-align: center;
-    padding: 50px 0;
-}
-        .banner-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
+        .banner h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
 
-p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
+        .banner p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1em;
-    text-decoration: none;
-    background-color: #fff;
-    color: #3498db;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            text-decoration: none;
+            background-color: #fff;
+            color: #3498db;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-.btn:hover {
-    background-color: #3498db;
-    color: #fff;
-}
+        .btn:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
 
         #searchButton {
             padding: 10px 20px;
@@ -117,16 +114,68 @@ p {
         }
 
         #searchButton:hover {
-            background-color: #1a394e;
+            background-color: #74bff1;
+        }
 
+        nav {
+            background-color: #333; /* Change the color as needed */
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px;
+            background-color: #333; /* Change the color as needed */
+        }
+
+        .footer-content .contact {
+            color: #fff;
+        }
+
+        .bottom-nav {
+            background-color: #333; /* Change the color as needed */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .bottom-nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        marquee {
+            background-color: #1e6290;
+            color: #fff;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
         }
     </style>
     
     <title>Happy Feet</title>
 </head>
 <body>
+    <marquee behavior="scroll" direction="left">Special Discounts - Up to 50% off on selected items! Hurry, limited time offer.</marquee>
+
     <div id="logo">
-        <img src="ogo.jpeg" alt="Your Logo"> 
+        <img src="logo.jpeg" alt="Your Logo"> 
         <label for="shoes">Filters</label>
         <select name="Filters" id="filters" onchange="changeCategory()">
             <option value="Select">Select Category</option>
@@ -134,64 +183,68 @@ p {
             <option value="Women">Women</option>
             <option value="Kids">Kids</option>
             <option value="All types">All types</option>
-            
         </select>
     </div>
 
-    <div id="links">
-        <a href="#login" onclick="openLoginModel()">Login</a>
-        <a href="#signup" onclick="signUpButtonClicked()">Sign Up</a>
-    </div>
+   
     
     <div id="search">
         <input type="text" id="searchInput" placeholder="Search...">
         <button id="searchButton" onclick="performSearch()">Search</button>
     </div>
+    <br>
     <div class="banner">
-        <h1>Welcome to Our Happy Feet    Store!</h1>
+        <h1>Welcome to Our Happy Feet Store!</h1>
         <p>Discover amazing deals on your favorite products.</p>
     </div>
+    <br>
+    <div id="links">
+        <a href="#login" onclick="openLoginModel()">Login</a>
+        <a href="#signup" onclick="signUpButtonClicked()">Sign Up</a>
+    </div>
+   
+   
 
-</body>
-<footer>
-    <div class="footer-content">
-        <div class="contact">
-            <h3>Contact Us</h3>
-            <p>Email: info@example.com</p>
-            <p>Phone: +1 (123) 456-7890</p>
-            <p>Address: 123 Street, Maryville, Usa</p>
-        </div>
-</footer>
-</html>
+    <div class="bottom-nav">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Products</a>
+        <a href="#" onclick="showContactDetails()">Contact</a>
+    </div>
 
+    <script>
+        function changeCategory() {
+            var selectedCategory = document.getElementById("filters").value;
+            if(selectedCategory==="Men"){
+                document.write("Men");
+            }    
+            if(selectedCategory==="Women"){
+                document.write("Women");
+            }  
+            if(selectedCategory==="Kids"){
+                document.write("Kids");
+            } 
+        }
 
-
-<script>
-    function changeCategory() {
-        var selectedCategory = document.getElementById("filters").value;
-        if(selectedCategory==="Men"){
-            document.write("Men");
-        }    
-        if(selectedCategory==="Women"){
-            document.write("Women");
-        }  
-        if(selectedCategory==="Kids"){
-            document.write("Kids");
-        } 
-    }
-
-    
         function signUpButtonClicked() {
             // Add your signup logic here
             alert("Signup button clicked!");
             // You can replace the alert with the actual signup code
         }
-    
 
-    function performSearch() {
+        function performSearch() {
             var searchInput = document.getElementById("searchInput").value;
             document.write(searchInput);
             console.log("Search term: " + searchInput);
-    }
+        }
 
-</script>
+        function showContactDetails() {
+            var contactDetails = "Contact Us\n" +
+                                "Email: info@example.com\n" +
+                                "Phone: +1 (123) 456-7890\n" +
+                                "Address: 123 Street, Maryville, Usa";
+            alert(contactDetails);
+        }
+    </script>
+</body>
+</html>
