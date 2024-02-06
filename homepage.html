@@ -255,11 +255,12 @@
             document.getElementById('loginModal').style.display = 'block';
         }
 
-        function performSearch() {
-            var searchInput = document.getElementById("searchInput").value;
-            document.write(searchInput);
+      function performSearch() {
+            var searchInput = document.getElementById("searchInput").value; 
+            var searchResultContainer = document.getElementById("searchResult");
+            searchResultContainer.textContent = "Search term: " + searchInput;
             console.log("Search term: " + searchInput);
-        }
+    }
 
         function showContactDetails() {
             var contactDetails = "Contact Us\n" +
