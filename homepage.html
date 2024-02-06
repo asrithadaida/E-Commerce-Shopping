@@ -201,9 +201,23 @@
         </div>
     </section>
     <br>
+    <button id="loginButton">Login</button>
     <div id="links">
-        <a href="#login" onclick="openLoginModel()">Login</a>
         <a href="#signup" onclick="signUpButtonClicked()">Sign Up</a>
+    </div>
+
+    <div id="loginModal">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        <button onclick="closeLogin()">Close</button>
     </div>
    
    
@@ -234,9 +248,11 @@
     }
 
         function signUpButtonClicked() {
-            // Add your signup logic here
             alert("Signup button clicked!");
-            // You can replace the alert with the actual signup code
+        }
+
+        function openLogin() {
+            document.getElementById('loginModal').style.display = 'block';
         }
 
         function performSearch() {
@@ -252,6 +268,19 @@
                                 "Address: 123 Street, Maryville, Usa";
             alert(contactDetails);
         }
+
+        function handleLogin(event) {
+            event.preventDefault(); 
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            console.log("Username: " + username);
+            console.log("Password: " + password);
+            closeLogin();
+        }
+
+    document.getElementById('loginButton').addEventListener('click', openLogin);
+    
     </script>
 </body>
 </html>
