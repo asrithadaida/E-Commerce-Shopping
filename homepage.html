@@ -167,6 +167,19 @@
             font-size: 16px;
             font-weight: bold;
         }
+
+        #loginModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        
     </style>
     
     <title>Happy Feet</title>
@@ -267,6 +280,11 @@
                                 "Phone: +1 (123) 456-7890\n" +
                                 "Address: 123 Street, Maryville, Usa";
             alert(contactDetails);
+        }
+
+        function closeLogin(){
+
+            $("loginModal").modal('hide');
         }
 
         function handleLogin(event) {
