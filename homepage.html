@@ -368,21 +368,22 @@
         </div>
     </section>
     <br>
-    <button id="loginButton">Login</button>
+   
     <div id="links">
+        <a href="#login" onclick="openLogin()">Login</a>
         <a href="#signup" onclick="signUpButtonClicked()">Sign Up</a>
     </div>
  
     <div id="loginModal">
         <h2>Login</h2>
         <form id="loginForm" onsubmit="handleLogin(event)">
-            <label for="username">Username:</label>
+            <label for="username">Username:</label> <br>
             <input type="text" id="username" required>
-            <br>
-            <label for="password">Password:</label>
+            <br><br>
+            <label for="password">Password:</label><br>
             <input type="password" id="password" required>
             <br>
-            <button type="submit">Login</button>
+            <button type="submit">Login</button> <br>
         </form>
         <button onclick="closeLogin()">Close</button>
     </div>
