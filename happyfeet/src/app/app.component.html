@@ -73,6 +73,48 @@
             font-size: 1.2em;
             margin-bottom: 30px;
         }
+        nav {
+            background-color: #333; /* Change the color as needed */
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+        }
+ 
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+ 
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px;
+            background-color: #333; /* Change the color as needed */
+        }
+ 
+        .footer-content .contact {
+            color: #fff;
+        }
+ 
+        .bottom-nav {
+            background-color: #333; /* Change the color as needed */
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+ 
+        .bottom-nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
 </style>
 
 <body>
@@ -108,9 +150,11 @@
         <button id="searchButton" onclick="performSearch()">Search</button>
     </div>
 
-    <div id="search">
-        <input type="text" id="searchInput" placeholder="Search...">
-        <button id="searchButton" onclick="performSearch()">Search</button>
+    <div class="bottom-nav">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Products</a>
+        <a href="#" onclick="showContactDetails()">Contact</a>
     </div>
     
     </div>
