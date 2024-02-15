@@ -54,7 +54,25 @@
         nav a:hover {
             background-color: #777;
         }
-        
+        .banner {
+            background-color: rgba(52, 152, 219, 0.7); /* Use rgba to add transparency */
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px; /* Adjusted padding */
+            max-width: 800px; /* Added max-width */
+            margin: 0 auto; /* Centered the banner */
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+ 
+        .banner h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+ 
+        .banner p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
 </style>
 
 <body>
@@ -85,7 +103,13 @@
         </form>
         <button onclick="closeLogin()">Close</button>
     </div>
-
+    <section class="hero-banner">
+        <div class="container">
+            <h1>Step into Happiness at Sole Bliss Emporium</h1>
+            <p>Uncover incredible offers on our curated collection.</p>
+            <a href="#shop-now" class="btn">Shop Now</a>
+        </div>
+    </section>
 </body>
 <script>
   function openLoginModal() {
