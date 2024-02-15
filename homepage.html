@@ -12,7 +12,7 @@
             background-blend-mode: lighten;
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            height: flex;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -146,7 +146,7 @@
  
         .bottom-nav {
             background-color: #333; /* Change the color as needed */
-            position: fixed;
+            position: relative;
             bottom: 0;
             width: 100%;
             text-align: center;
@@ -274,8 +274,61 @@
     cursor: pointer;
 }
 
+#newsletter {
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: sticky;
+    
+}
+
+#newsletterForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#newsletterForm label {
+    margin-bottom: 10px;
+}
+
+#newsletterForm input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#newsletterForm button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #1e6290;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#newsletterForm button:hover {
+    background-color: #74bff1;
+    color: #fff;
+}
+.news-container{
+   background-color: transparent;
+}
+.news-item{
+    background-color: transparent;
+}
+
+.news{
+    background-color: transparent;
+}
+
     </style>
-   
+
     <title>Happy Feet</title>
 </head>
 <body>
@@ -389,8 +442,27 @@
         </form>
         <button onclick="closeLogin()">Close</button>
     </div>
-   
-   
+    <marquee class="news" behavior="scroll" direction="Up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+        <div class="news-container">
+        <div class="news-item">
+            <h3>New Arrivals</h3>
+            <p>Check out our latest collection of shoes - fresh styles just arrived!</p>
+        </div>
+        <div class="news-item">
+            <h3>Flash Sale</h3>
+            <p>Don't miss our 24-hour flash sale! Grab your favorite pair at an exclusive discount.</p>
+        </div>
+        </div>
+    </marquee>
+    <section id="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay informed about our latest products, promotions, and exclusive offers by subscribing to our newsletter.</p>
+        <form id="newsletterForm" onsubmit="subscribeNewsletter(event)">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
  
     <div class="bottom-nav">
         <a href="#">Home</a>
@@ -456,18 +528,6 @@
         }
  
     document.getElementById('loginButton').addEventListener('click', openLogin);
-    
-
-    <marquee behavior="scroll" direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
-    <div class="news-item">
-        <h3>New Arrivals</h3>
-        <p>Check out our latest collection of shoes - fresh styles just arrived!</p>
-    </div>
-    <div class="news-item">
-        <h3>Flash Sale</h3>
-        <p>Don't miss our 24-hour flash sale! Grab your favorite pair at an exclusive discount.</p>
-    </div>
-    </marquee>
 
    
     </script>
