@@ -327,6 +327,31 @@
     background-color: transparent;
 }
 
+.customer-reviews {
+    text-align: center;
+    padding: 20px;
+    background-color: #8f5858;
+}
+
+.review {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.review p {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.customer-name {
+    font-style: italic;
+    color: #777;
+}
+
+
     </style>
 
     <title>Happy Feet</title>
@@ -470,7 +495,20 @@
         <a href="#">Products</a>
         <a href="#" onclick="showContactDetails()">Contact</a>
     </div>
- 
+
+    <section class="customer-reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review">
+            <p>"Great quality and excellent service! I love my new shoes."</p>
+            <p class="customer-name">- John Doe</p>
+        </div>
+        <div class="review">
+            <p>"Fantastic collection! Found the perfect pair for every occasion."</p>
+            <p class="customer-name">- Jane Smith</p>
+        </div>
+        
+    </section>
+
     <script>
         function changeCategory() {
             var selectedCategory = document.getElementById("filters").value;
