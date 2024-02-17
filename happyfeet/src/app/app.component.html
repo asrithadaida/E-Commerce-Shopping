@@ -577,6 +577,18 @@
  
     document.getElementById('loginButton').addEventListener('click', openLogin);
 
+    var dropdown = document.getElementById("filters");
+
+// Add onclick event listener to the dropdown
+dropdown.addEventListener("click", function(event) {
+  // Check if the clicked element is an option
+  if (event.target.tagName === "OPTION") {
+    var selectedOption = event.target;
+    var optgroup = selectedOption.parentNode;
+    alert("You clicked: " + selectedOption.text + " in " + optgroup.label);
+  }
+});
+
    
     </script>
 </body>
