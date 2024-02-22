@@ -1,0 +1,17 @@
+<div class="relative">
+    <div class="carouse-container overflow-x-hidden">
+        <div class="c1" [style.transform]="translateX(-'+(currentSlide*100)+' %)'">
+            <ng-container class=""
+            *ngFor="let item of c1data: let i=index">
+            <a [rouerLink]]="item.path" class="carouse1-item">
+                <img [src]="item.image" alt="c1 image">
+            </a>
+
+            </ng-container>
+
+
+        </div>
+
+    </div>
+
+</div>
