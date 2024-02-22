@@ -410,7 +410,23 @@
     margin-bottom: 10px;
 }
 
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e6290;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
+#backToTopBtn:hover {
+    background-color: #08F2F9;
+}
     </style>
 
     <title>Happy Feet</title>
@@ -429,7 +445,7 @@
             </div>
         </div>
     
-        <a href="#">Women</a>
+        
         <div class="dropdown">
             <a href="#">Women</a>
             <div class="dropdown-content">
@@ -691,7 +707,28 @@ dropdown.addEventListener("click", function(event) {
   }
 });
 
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    var backToTopBtn = document.getElementById("backToTopBtn");
+
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0; 
+}
+
    
     </script>
+    
+<button onclick="topFunction()" id="backToTopBtn" title="Go to top">&#8679; Top</button>
 </body>
 </html>
