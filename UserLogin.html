@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Feet</title>
+    <title>User Login</title>
     <style>
         header {
             background-color: #0077cc;
@@ -27,7 +27,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
+            align-items: stretch;
             height: 100vh;
+        }
+        .login-container {
+            flex-grow: 1; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
  
         button {
@@ -38,6 +47,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin-top: 10px;
         }
  
         button:hover {
@@ -72,90 +82,7 @@
         button:hover {
             background-color: #45a049;
         }
-    </style>
-</head>
-<header>
-    <h1>Happy Feet</h1>
-</header>
- 
-<body>    
-    <div class="login-container">
-       
-        <img id="logo" src="ogo.jpeg" alt="Logo" class="logo">
-
-        <h2>Login</h2>
-        <form action="#" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" class="input-field" placeholder="Enter your username" required>
-   
-            <label for="password">Password:</label>
- 
-            <input type="password" id="password" name="password" class="input-field" placeholder="Enter your password" required>
- 
-            <input type="password" id="password" name="password" required>
-        </div>
-            <style>
-                div {
-                    text-align: center;
-                    margin-top: 20px;  
-                }
-           
-                a {
-                    color: cornflowerblue;      
-                    cursor: pointer;      
-                }
-           
-                a:hover {
-                    text-decoration: underline;
-                }
-            </style>
- 
-           
-            <div>
-                <a href="#" onclick="forgotPassword()">Forgot Password?</a>
-            </div>
- 
-            <button type="submit" onclick="submitForm()">Login</button>
-            <div>
-                <form action="#" method="post">
-                    <h2>User Registration</h2>
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-           
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-           
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-           
-                    <label for="confirm_password">Confirm Password:</label>
-                    <input type="password" id="confirm_password" name="confirm_password" required>
-           
-                    <input type="submit" value="Register">
-                    <p>Already have an account? <a href="login.html">Log in here</a></p>
-                </form>
-               
-            </div>
-        </form>
-</body>
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<footer>
-    <div class="footer-content">
-        </div>
-        <div class="contact">
-            <h3>Contact Us</h3>
-            <p>Email: info@example.com</p>
-            <p>Phone: +1 (123) 456-7890</p>
-            <p>Address: 123 Street, Maryville, Usa</p>
-        </div>
-</footer>
- 
-=======
->>>>>>> Stashed changes
-</html>
- 
-.login-form {
+        .login-form {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -182,8 +109,93 @@
 .logo {
     max-width: 90%;
     height: auto;
-    display: block;
-    margin: 0 auto;
+    display:flex;
+    margin-left: 20px;
     border: 1px solid #0077cc;
     border-radius: 5px;
+    align-items:end;
 }
+footer {
+            background-color: #0077cc;
+            color: #fff;
+            text-align: center;
+            padding: 0px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            background-color: #0077cc;
+            color: #fff;
+            text-align: center;
+            padding:0%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            margin: 0;
+        }
+        .contact {
+            text-align: left;
+            max-width: 100%;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navigation a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+ 
+<body>    
+    <div class="login-container">
+       
+        <img id="logo" src="ogo.jpeg" alt="Logo" class="logo">
+
+        <h2>Login</h2>
+        <form action="#" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" class="input-field" placeholder="Enter your username" required>
+   
+            <label for="password">Password:</label>
+ 
+            <input type="password" id="password" name="password" class="input-field" placeholder="Enter your password" required>
+ 
+            
+           
+            <button type="submit" onclick="submitForm()">Login</button>
+            <div>
+                <a href="#" onclick="forgotPassword()">Forgot Password?</a>
+            </div>
+ 
+        </div>
+            
+        </form>
+
+
+<footer>
+    <div class="footer-content">
+       
+      
+        <div class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+        </div>
+</footer>
+ 
+</body>
+</html>
+ 
