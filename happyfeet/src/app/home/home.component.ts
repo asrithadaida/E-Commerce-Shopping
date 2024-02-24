@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  menShoes:any
+
+  ngOnInit(){
+    this.menShoes=this.menShoes.slice(0,5);
+  }
+
+  womenShoes:any
+
+  ngOnInit(){
+    this.womenShoes=this.womenShoes.slice(0,5);
+  }
 }
