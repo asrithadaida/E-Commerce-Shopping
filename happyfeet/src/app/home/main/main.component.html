@@ -21,7 +21,9 @@
     <button>SignUp</button>
 
 </div>
+
 <script>
+  
     var app = angular.module('myApp', []);
 
     app.controller('DropdownController', function($scope) {
@@ -31,4 +33,30 @@
             { id: 3, name: 'Kids' }
         ];
     });
+  app.controller('LoginController', function($scope) {
+            $scope.isModalOpen = false;
+            $scope.username = '';
+            $scope.password = '';
+
+            $scope.openLoginModal = function() {
+                $scope.isModalOpen = true;
+            };
+
+            $scope.closeLoginModal = function() {
+                $scope.isModalOpen = false;
+            };
+
+            $scope.handleLogin = function() {
+                // Handle login logic here
+                console.log('Username:', $scope.username);
+                console.log('Password:', $scope.password);
+
+                // Close modal after login
+                $scope.isModalOpen = false;
+
+                // Optionally, you can reset the username and password fields
+                $scope.username = '';
+                $scope.password = '';
+            };
+        });
 </script>
