@@ -39,6 +39,10 @@
         </div>
     </div>
 </body>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+</div>
 <script>
   
     var app = angular.module('myApp', []);
@@ -76,4 +80,15 @@
                 $scope.password = '';
             };
         });
+        app.controller('modal-footer', function($scope, $uibModalInstance) {
+      
+      $scope.ok = function() {
+        $uibModalInstance.close();
+      };
+
+      
+      $scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+      };
+    });
 </script>
