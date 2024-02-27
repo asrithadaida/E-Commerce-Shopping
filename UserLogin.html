@@ -183,19 +183,23 @@ footer {
         </form>
 
 
-<footer>
-    <div class="footer-content">
-       
-      
-        <div class="navigation">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-        </div>
-        </div>
-</footer>
- 
+        <footer>
+            <div class="footer-content">
+                <div class="navigation">
+                    <a href="#">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </div>
+                <button id="darkModeToggle" onclick="toggleDarkMode()">Dark Mode</button>
+            </div>
+        </footer>
+        <script>
+            function toggleDarkMode() {
+                document.body.classList.toggle('dark-mode');
+            }
+        </script>
+ </div>
 </body>
 </html>
  
