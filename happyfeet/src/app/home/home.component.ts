@@ -18,4 +18,10 @@ export class HomeComponent {
   ngOnInit(){
     this.womenShoes=this.womenShoes.slice(0,5);
   }
+
+  kidsShoes:any
+
+  ngOnInit(){
+    this.kidsShoes=this.kidsShoes.slice(0,5);
+  }
 }
