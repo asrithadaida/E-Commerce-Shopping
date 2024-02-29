@@ -3,9 +3,10 @@
     <div>
         <app-main-carousel/>
     </div>
-    <app-product-slider title="Men's shoes"/>
-    <app-product-slider title="Women's shoes"/>
-    <app-product-slider title="Kid's shoes"/>
+  
+    <app-product-slider [products]="menshoes" title="Men's shoes"/>
+    <app-product-slider [products]="womenshoes" title="Women's shoes"/>
+    <app-product-slider [products]="kidshoes" title="Kid's shoes"/>
     
 
 </div>
