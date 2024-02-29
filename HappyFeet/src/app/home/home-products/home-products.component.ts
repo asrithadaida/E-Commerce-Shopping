@@ -6,5 +6,23 @@ import { Component } from '@angular/core';
   styleUrl: './home-products.component.scss'
 })
 export class HomeProductsComponent {
+    productsData:any
 
+    currentSlide=0;
+    interval:any;
+    ngOnInit(){
+      this.productsData=homeProductsData;
+    }
+
+    autoPlay(){
+      setInterval(()=>{
+        this.nextSlide();
+      },2000)
+    }
+
+    nextSlide(){
+      this.currentSlide=(this.currentSlide+1) % this.productsData.length;
+    }
 }
+
+
