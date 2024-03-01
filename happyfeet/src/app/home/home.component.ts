@@ -7,7 +7,13 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+@Input() title:any
+@Input() product:any
+
   menShoes:any
+  womenShoes:any
+  kidsShoes:any
+  
 
   ngOnInit(){
     this.menShoes=this.menShoes.slice(0,5);
