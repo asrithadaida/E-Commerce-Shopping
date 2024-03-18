@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { MainComponent } from './home/main/main.component';
 import { ProductsComponent } from './home/products/products.component';
 import { HomeProductsComponent } from './home/home-products/home-products.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -14,12 +15,20 @@ import { HomeProductsComponent } from './home/home-products/home-products.compon
     HomeComponent,
     MainComponent,
     ProductsComponent,
-    HomeProductsComponent
+    HomeProductsComponent,
+    NavbarComponent,
+    NavContentComponent,
+    FooterComponent
   ],
+
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule,
   ],
+  
   providers: [
     provideClientHydration()
   ],
