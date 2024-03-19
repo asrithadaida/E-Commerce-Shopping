@@ -198,6 +198,35 @@ footer {
             function toggleDarkMode() {
                 document.body.classList.toggle('dark-mode');
             }
+
+            function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        
+        function submitForm(event) {
+            event.preventDefault(); 
+
+            
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+           
+            if (username === "your_username" && password === "your_password") {
+                alert("Login successful!"); 
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+
+        
+        function forgotPassword() {
+            
+            alert("Forgot Password feature is not implemented yet.");
+        }
+
+        
+        document.getElementById('loginForm').addEventListener('submit', submitForm);
         </script>
  </div>
 </body>
