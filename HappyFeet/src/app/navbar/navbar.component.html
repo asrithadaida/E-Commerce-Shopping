@@ -43,7 +43,9 @@
                 <button mat-menu-item>Logout</button>
             </mat-menu>
         </div>
-
+<div *ngIf="isNavbarContentOpen" class="modal-container">
+<app-nav-content [selectedSection]="currentSection"/>
+</div>
     </div>
     </div>
 </div>
