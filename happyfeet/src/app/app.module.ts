@@ -9,6 +9,7 @@ import { ProductsComponent } from './home/products/products.component';
 import { HomeProductsComponent } from './home/home-products/home-products.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
