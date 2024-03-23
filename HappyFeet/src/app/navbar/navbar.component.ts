@@ -21,7 +21,7 @@ export class NavbarComponent {
         onDocumentClick(event:MouseEvent){
             const modalContainer=document.querySelector("./modal-container");
             const openButtons=document.querySelectorAll(".open-button");
-            et clickInsideButton=false;
+            let clickInsideButton=false;
 
 openButtons.forEach((button:Element)=>{
 if(button.contains(event.target as Node)){
