@@ -27,7 +27,9 @@ openButtons.forEach((button:Element)=>{
 if(button.contains(event.target as Node)){
 clickInsideButton=true;
 }
-}
+})
+if(modalContainer && !clickInsideButtom && this.isNavbarContentOpen){
+    this.closeNavbarContent();
 
         }
     }
