@@ -37,7 +37,22 @@ export const navigation = {
             
                 
             }
-
+            kids:{
+            id: 'kids',
+            name: 'kids',
+            featured:[...
+            ],
+            sections:
+                {
+                id: 'shoes',
+                name: 'sandals',
+                items:[
+                {name:'sandals', id:'sandals'}
+                {name:'sneakers', id: 'sneakers'}
+                {name:'casuals', id: 'casuals'}
+                
+                ],
+            }
 
 
 
