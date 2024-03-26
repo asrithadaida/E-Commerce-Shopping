@@ -9,7 +9,11 @@ export const navigation = {
             id: 'shoes',
             name: 'sandals',
             items:[
-            {name:'women shoes', id:'shoes'}
-            {name:'men shoes', id: 'shoes'}
+            {name:'sandals', id:'sandals'}
+            {name:'sneakers', id: 'sneakers'}
+            {name:'formal shoes', id: 'formal shoes'}
+            {name:'casuals', id: 'casuals'}
+
+
     }
 }
