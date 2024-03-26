@@ -17,7 +17,7 @@ export class NavbarComponent {
         this.isNavbarContentOpen=false;
     }
     navigateTo(path:any){
-        @HostListener('document:click',[$event])
+        @HostListener('document:click',[`$event`])
         onDocumentClick(event:MouseEvent){
             const modalContainer=document.querySelector("./modal-container");
             const openButtons=document.querySelectorAll(".open-button");
