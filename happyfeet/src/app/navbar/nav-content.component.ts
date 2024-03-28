@@ -8,4 +8,9 @@ import {component} from 'angular/core';
 export class NavContentComponent {
    category:any
    selectedSection:any;
+   
+   ngOnInit(){
+    this.category=navigation;
+    console.log("selected section",this.selectedSection)
+   }
 }
