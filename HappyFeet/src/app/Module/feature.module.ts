@@ -4,6 +4,7 @@ import { HomeComponent } from '../home/home.component';
 import { MainComponent } from '../home/main/main.component';
 import { ProductSliderComponent } from '../home/home-products/product-slider.component';
 import { HomeProductsComponent } from '../home/home-products/home-products.component';
+import { ProductsComponent } from '../home/products/products.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { HomeProductsComponent } from '../home/home-products/home-products.compo
     exports: [
         FeatureComponent,
         HomeComponent
+        ProductsComponent
     ]
 
 })

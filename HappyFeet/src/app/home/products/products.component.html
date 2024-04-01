@@ -8,3 +8,18 @@
     <app-product-slider title="Kid's shoes"/>
 
 </div>
+
+<h1 class="text-4x1 font-bold text-white">Products</h1>
+
+<div class="flex items-center">
+
+    <div>
+        <button mat-button [matMenuTriggerFor]="sortMenu">.
+            sort
+        </button>
+        <mat-menu #sortMenu="matMenu">
+            <button mat-menu-item>Price: high-low</button>
+            <button mat-menu-item>Price: low-high</button>
+        </mat-menu>
+    </div>
+</div>
