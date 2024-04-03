@@ -7,5 +7,6 @@ import { cComponent } from '@angular/core';
 })
 
 export class ProductSliderComponent{
-
+    @Input() title:any
+    @Input() products:any
 }

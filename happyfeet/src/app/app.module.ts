@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {BrowserAnimationModule } from '@angular/platform-browser/animations';
+import {MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
