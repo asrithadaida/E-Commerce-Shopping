@@ -42,6 +42,19 @@ import { NavContentComponent } from './navbar/nav-content.component';
     AuthModule,
     AdminModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({
+      auth: authReducer,
+      user: userReducer,
+      product: productReducer,
+      cart: cartReducer,
+      order: orderReducder,
+      review: reviewReducer,
+    }),
+    HttpClientModule,
+    StoreDevtoolsModule.instrument();
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 
 })
 
