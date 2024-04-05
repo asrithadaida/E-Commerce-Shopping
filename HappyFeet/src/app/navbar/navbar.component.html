@@ -11,12 +11,12 @@
             </button>
         </div>
         <div>
-            <button class="openNavbarContent"
+            <button
                (click)="openNavbarContent('Women')" mat-buttton>Men
             </button>
         </div>
         <div>
-            <button class="openNavbarContent"
+            <button
                (click)="openNavbarContent('Kids')" mat-buttton>Men
             </button>
         </div>
@@ -25,12 +25,7 @@
         <button (Click)="NavigateTo('cart')" mat-icon-button>
             <mat-icon>Shopping cart</mat-icon>
         </button>
-        <button mat-raised-button
-        type=""
-        color="accent"> 
-        LOGIN
-
-        </button>
+        <button *ngIf="false" mat-raised-button type="" color="accent"> LOGIN </button>
         <div class="ml-3 flex items-center">
         <div class="flex items-center space-x-5">
             <span class="font-bold text-lg"> User</span>
@@ -43,11 +38,7 @@
                 <button mat-menu-item>Logout</button>
             </mat-menu>
         </div>
-<div *ngIf="isNavbarContentOpen" class="modal-container">
-<app-nav-content [selectedSection]="currentSection"/>
-<h1 class="text center">{{item.name}}</h1>
-</div>
-    </div>
-    </div>
-</div>
 
+    </div>
+    </div>
+</div>
