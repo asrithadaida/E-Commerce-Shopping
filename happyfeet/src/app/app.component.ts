@@ -38,9 +38,10 @@ import { NavContentComponent } from './navbar/nav-content.component';
     BrowserModule,
     AppRoutingModule,
     FeatureModule,
-    SharedModule,
-    AuthModule,
-    AdminModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    
     BrowserAnimationsModule,
     StoreModule.forRoot({
       auth: authReducer,
