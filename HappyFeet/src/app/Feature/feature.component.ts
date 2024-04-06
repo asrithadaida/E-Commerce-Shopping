@@ -3,11 +3,16 @@ import {CommonModule} from '@andular/common';
 
 @NgModule({
     declarations:[],
-    imports:[
-        CommonModule
-    ]
     exports:[
         FeatureModule,
     ]
+    FeatureComponent,
+        HomeComponent,
+        MainCarouselComponent,
+        ProductSliderComponent
+    imports:[
+           CommonModule
+    ]    
+    
 })
 export class FeatureModule{ }
