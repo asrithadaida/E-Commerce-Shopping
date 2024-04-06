@@ -6,5 +6,8 @@ import {CommonModule} from '@andular/common';
     imports:[
         CommonModule
     ]
+    exports:[
+        FeatureModule,
+    ]
 })
 export class FeatureModule{ }
