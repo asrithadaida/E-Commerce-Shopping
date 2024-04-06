@@ -61,3 +61,22 @@
         </div>
     </main>
 </div>
+
+<div class="scroll-py-4">
+
+    <div *ngFor="let option of item.options">
+
+        <div class="flex items-center">
+
+            <mat-radio-button
+            id="'filter - '+ option.value"
+            [name]="item.id"
+            [value]="option.value">
+        
+            <span class="text-sm text-gray-500">
+                {option.label}
+            </span>
+        </mat-radio-button>
+        </div>
+    </div>
+</div>
