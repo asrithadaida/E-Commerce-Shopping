@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { filters } from '../../Module/FilterData';
 
 @Component({
   selector: 'app-products',
@@ -7,22 +8,18 @@ import { Component } from '@angular/core';
 })
 export class ProductsComponent {
 
-  @Input() title:any
-  @Input() products:any
-  @Input() filterData:any
-
-
-  ngOnInit(){
-    this.title=this.title;
-  }
-
-  ngOnInit(){
-    this.products=products;
-  }
+  filterData : any
+  singleFilterData : any
 
   ngOnInit(){
     this.filterData=filters;
+    this.singleFilterData=singleFilter;
   }
+
+  
+
+  
+  
 
 }
 

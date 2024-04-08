@@ -36,8 +36,9 @@
 <mat-icon>filter-list></mat-icon>
 
 <form class="hidden lg:block">
-
-</form>    
+    <div *ngFor="let item of singleFilterData let last=last"></div>
+    <mat-divider *ngIf="!last"></mat-divider>
+    </form>    
 <div>
     products
 </div>    
