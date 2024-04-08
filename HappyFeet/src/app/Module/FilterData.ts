@@ -8,3 +8,20 @@ export const color = [
   "Green",
   "Yellow",
   ];
+
+  export const filters= [
+    {
+      id: "color",
+      name: "color",
+      options: [
+        {value: "white", label: "White"},
+        {value: "beige", label: "Beige"},
+        {value: "blue", label: "Blue"},
+        {value: "brown", label: "Brown"},
+        {value: "green", label: "Green"},
+        {value: "purple", label: "Purple"},
+        {value: "yellow", label: "Yellow"},
+        {value: "white", label: "white"},
+      ],
+    },
+  ];
