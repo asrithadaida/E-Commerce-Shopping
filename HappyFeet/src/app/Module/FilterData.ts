@@ -24,4 +24,14 @@ export const color = [
         {value: "white", label: "white"},
       ],
     },
+
+    {
+      id: "size",
+      name: "Size",
+      options: [
+        {value: "S", label: "S"},
+        {value: "M", label: "M"},
+        {value: "L", label: "L"},
+      ],
+    },
   ];
