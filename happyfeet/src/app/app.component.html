@@ -748,6 +748,12 @@ function topFunction() {
         <span class="font-medium">{{item.name}}</span>
         <div class="pt-6" id="fliter-section-6">
             <div class="scroll-py-4">
+                <div *ngFor="let option of item.options">
+                    <div class="flex items-center">
+                        <mat-checkbox
+                        id="fliter - '+ option.value" [name]="item.id" [value]="option.value">
+                        <span class="text-sm text-gray-500">{{option.label}}</span>
+                    </mat-checkbox>
               
                     </div>
                 </div>
