@@ -51,4 +51,14 @@ export const color = [
 
       ],
     },
+    {
+      id: "discount",
+      name: "DISCOUNT RANGE",
+      options: [
+        {
+          value: "10",
+          label: "10% And Above",
+        },
+      ],
+    },
   ];
