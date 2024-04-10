@@ -40,6 +40,7 @@
     <mat-divider *ngIf="!last"></mat-divider>
     </form>    
 <div>
+
     products
 </div>    
 
@@ -80,4 +81,16 @@
         </mat-radio-button>
         </div>
     </div>
+</div>
+
+<div class="lg:col-span-3">
+   <div class="flex flex-wrap justify-evenly">
+    <ng-container *ngFor="let item of menShoes">
+
+        <app-product-card [product]="item"/>
+
+    </ng-container>
+   </div>
+    products
+
 </div>
