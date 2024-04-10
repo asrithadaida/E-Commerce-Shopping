@@ -22,6 +22,7 @@ export const color = [
         {value: "purple", label: "Purple"},
         {value: "yellow", label: "Yellow"},
         {value: "white", label: "white"},
+        {value: "black", label: "Black"},
       ],
     },
 
@@ -32,6 +33,22 @@ export const color = [
         {value: "S", label: "S"},
         {value: "M", label: "M"},
         {value: "L", label: "L"},
+      ],
+    },
+
+  ];
+
+  export const singleFilter=[
+    { 
+      id: "price",
+      name: "Price",
+      options: [
+        {value: "9-59", label: "$9 To $59"},
+        {value: "59-99", label: "$59 To $99"},
+        {value: "99-159", label: "$99 To $159"},
+        {value: "159-199", label: "$159 To $199"},
+        {value: "199-259", label: "$199 To $259"},
+
       ],
     },
   ];
