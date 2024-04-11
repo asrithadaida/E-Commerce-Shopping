@@ -52,6 +52,14 @@
             <h1 class="text-4xl font-bold text-white">Products</h1>
 
             <div class="flex items-center">
+                <mat-checkbox class= " example-margin"
+                [checked]="allComplete"
+                [color]="task.color"
+                [indeterminate]="someCpmplete()"
+                >
+                <span class="text-sm text-gray-500">{{option.label}}</span>
+                </mat-checkbox>
+            
 
                 <div>
                     <button mat-button [matMenuTriggerFor]="sortMenu">
