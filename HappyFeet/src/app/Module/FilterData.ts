@@ -68,4 +68,12 @@ export const color = [
         {value: "80", label: "80% And Above"},
       ],
     },
+    {
+      id: "stock",
+      name: "Availability",
+      options: [
+        {value: "in_stock", label: "In Stock"},
+        {value: "out_of_stock", label: "Out Of Stock"},
+      ],
+    },
   ];
