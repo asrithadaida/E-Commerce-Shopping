@@ -48,10 +48,11 @@ When you have completed this table, delete this paragraph.
 
 #### Tools
 
-* List
-* your
-* tools
-* here (with links if necessary)
+* Node js: https://nodejs.org/api/documentation.html
+* Mongo DB: https://www.mongodb.com/docs/manual/reference/database-references/
+* Angular js: https://docs.angularjs.org/api
+* Render: https://docs.render.com/api
+
 
 #### Methods
 
