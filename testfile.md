@@ -32,7 +32,21 @@ Delete this paragraph after you have filled this table in
 
 | Feature description | List of functional requirements | 
 | ------------------- | ------------------------------- |
-| Login | FR 1.1, 1.2, 2.1, 3.2 |
+| Login | The system SHALL allow customers to create an account.|
+| Login | The system SHALL create user profiles for customers.|
+| Login | The system SHALL provide the functionality of filtering the products based on shoe categories, shoe    size, shoe price etc.|
+| Login | The system SHALL provide a cart to add the selected shoes.|
+| Login | The system SHALL enable the order processing.|
+| Login | The system SHALL process easy return and refund policies.|
+| Login | The system SHALL provide delivery options and enable delivery of the product.|
+| Login | The system SHALL enable secure online payments.|
+| Login | The system SHALL provide the passwords in encrypted format.|
+| Login | The system SHALL allow filtering and sorting the products.|
+| Login | The system SHALL allow user to modify and view products in the cart.|
+| Login | The system SHALL allow users to Wishlist the products.|
+| Login | The system SHOULD maintain order history and preferences for each customer.|
+| Login | The system SHOULD allow customers to leave feedback and reviews about the shoes they bought.|
+
 
 #### Not to be tested
 
