@@ -1,6 +1,6 @@
 # Test Plan
 
-## [Project Name]
+## Happy Feet
 
 ## Last updated: [date]
 
@@ -8,7 +8,11 @@
 
 ### Introduction
 
-Describe the purpose of this document, the summary of the goals of this plan, and any constraints you may be facing in the implementation of this test plan
+The Project involves creating an all-inclusive shoes e-commerce web application. 
+It entails putting important features like order tracking, product browsing, shopping cart management and user registration into practice. 
+Delivering a seamless and intuitive shopping experience to consumers is the aim, achieved by utilizing cutting-edge technology and following the best practices in UX/UI designs. 
+The Project overview covers several topics , such as goals, scope, technical specifications, development process, testing, implementation and upkeep. 
+The objective is to provide a strong and user-friendly e-commerce app that satisfies market expectations and spurs company growth via efficient project management and careful planning
 
 ### References
 
