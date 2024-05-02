@@ -69,18 +69,22 @@ Include here (at minimum) links to:
 
 ### Test Deliverables
 
-For this, you may group things by functional requirements or features; whichever is the most logical for you.
-You do not need to fill out who is responsible for each test at this time.  
-As you complete a test (either unit or not), include a link to the test file that 
+  * Test cases for each function requirement
+  * Test reports detailing test results and issues occured.
 
 #### Login
 
 | Requirement | Test Case Description | Test Type | Person Responsible | Completed |
 | ----------- | --------------------- | --------- | ------------------ | --------- |
-| FR 1.1      | System authenticates correct credentials | Unit | | |
-| FR 1.1      | System authenticates correct credentials | UI (selenium) | | |
-| FR 1.2      | System rejects incorrect password | Unit | | |
-| FR 1.2      | UI feedback when  | UI (selenium) | | |
+| FR 1.1 | Verify successful registration of account| Unit | | |
+| FR 1.2 | 
+| User profiles | Ensuring the profile creation and update |manual testing | | |
+| Product upload | Validating the image upload functionality | Unit | | |
+| Product search | Accurate search results display| functional | | |
+| Secure Online payments | Simulating the payment transaction | | |
+| Reviews and Ratings | Verify feedback submission and rating system functionality| | |
+| WishList| Verify the products added to wishlist | | |
+| 
 
 #### Another feature
 
