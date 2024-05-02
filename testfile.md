@@ -8,11 +8,10 @@
 
 ### Introduction
 
-The Project involves creating an all-inclusive shoes e-commerce web application. 
-It entails putting important features like order tracking, product browsing, shopping cart management and user registration into practice. 
-Delivering a seamless and intuitive shopping experience to consumers is the aim, achieved by utilizing cutting-edge technology and following the best practices in UX/UI designs. 
-The Project overview covers several topics , such as goals, scope, technical specifications, development process, testing, implementation and upkeep. 
-The objective is to provide a strong and user-friendly e-commerce app that satisfies market expectations and spurs company growth via efficient project management and careful planning
+This test plan outlines the testing approach for Happy Feet, an online e-commerce shopping website, connecting buyers. It aims to ensure the system functions as expected, meeting functional requirements while maintaining quality and security standards.
+
+### Purpose of the document
+This document serves as a guide for testing Happy Feet features, identifying tools, methods, and deliverables necessary for comprehensive testing.
 
 ### References
 
@@ -25,16 +24,11 @@ Include here (at minimum) links to:
 
 #### To be tested
 
-The data in this table is for a fictional project; replace it with stuff from yours! 
-For the feature description, think more at the level of a use case/user story.
-A functional requirement may be associated with more than one feature!
-Delete this paragraph after you have filled this table in
-
 | Feature description | List of functional requirements | 
 | ------------------- | ------------------------------- |
-| Login | The system SHALL allow customers to create an account.|
-| Login | The system SHALL create user profiles for customers.|
-| Product | The system SHALL provide the functionality of filtering the products based on shoe categories, shoe    size, shoe price etc.|
+|Account Registration | The system SHALL allow customers to create an account.|
+| User profiles | The system SHALL create user profiles for customers.|
+| Product uploads | The system SHALL provide the functionality of filtering the products based on shoe categories, shoe    size, shoe price etc.|
 | Cart | The system SHALL provide a cart to add the selected shoes.|
 | Order | The system SHALL enable the order processing.|
 | Order | The system SHALL process easy return and refund policies.|
@@ -49,10 +43,6 @@ Delete this paragraph after you have filled this table in
 
 
 #### Not to be tested
-
-There should be very few (if anything) in this table.  
-This is reserved for things that cannot be tested for some reason. 
-When you have completed this table, delete this paragraph.
 
 | Feature description | List of functional requirements | Rationale |
 | ------------------- | ------------------------------- | --------- |
@@ -70,8 +60,10 @@ When you have completed this table, delete this paragraph.
 
 #### Methods
 
-* Unit testing (which tools)
-* Other kinds of testing
+* Functional testing(end-to-end)
+* Regression testing
+* Manual testing
+* Unit testing
 
 ### Test Deliverables
 
