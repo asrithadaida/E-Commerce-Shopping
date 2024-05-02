@@ -34,18 +34,18 @@ Delete this paragraph after you have filled this table in
 | ------------------- | ------------------------------- |
 | Login | The system SHALL allow customers to create an account.|
 | Login | The system SHALL create user profiles for customers.|
-| Login | The system SHALL provide the functionality of filtering the products based on shoe categories, shoe    size, shoe price etc.|
-| Login | The system SHALL provide a cart to add the selected shoes.|
-| Login | The system SHALL enable the order processing.|
-| Login | The system SHALL process easy return and refund policies.|
-| Login | The system SHALL provide delivery options and enable delivery of the product.|
-| Login | The system SHALL enable secure online payments.|
+| Product | The system SHALL provide the functionality of filtering the products based on shoe categories, shoe    size, shoe price etc.|
+| Cart | The system SHALL provide a cart to add the selected shoes.|
+| Order | The system SHALL enable the order processing.|
+| Order | The system SHALL process easy return and refund policies.|
+| Order | The system SHALL provide delivery options and enable delivery of the product.|
+| Payment | The system SHALL enable secure online payments.|
 | Login | The system SHALL provide the passwords in encrypted format.|
-| Login | The system SHALL allow filtering and sorting the products.|
-| Login | The system SHALL allow user to modify and view products in the cart.|
-| Login | The system SHALL allow users to Wishlist the products.|
-| Login | The system SHOULD maintain order history and preferences for each customer.|
-| Login | The system SHOULD allow customers to leave feedback and reviews about the shoes they bought.|
+| Product | The system SHALL allow filtering and sorting the products.|
+| Cart page | The system SHALL allow user to modify and view products in the cart.|
+| Wishlist | The system SHALL allow users to Wishlist the products.|
+| Oder history | The system SHOULD maintain order history and preferences for each customer.|
+| Product reviews | The system SHOULD allow customers to leave feedback and reviews about the shoes they bought.|
 
 
 #### Not to be tested
@@ -56,7 +56,7 @@ When you have completed this table, delete this paragraph.
 
 | Feature description | List of functional requirements | Rationale |
 | ------------------- | ------------------------------- | --------- |
-| Color of object in rendered picture is correct | FR 6.8 | Cannot be automatically verified; requires user verification |
+|Decrypted format to save passwords in database | FR.17 | We cannot test the decrypted format of passwords saved in database |
 
 ### Approach
 
