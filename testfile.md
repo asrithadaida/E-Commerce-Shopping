@@ -17,8 +17,10 @@ This document serves as a guide for testing Happy Feet features, identifying too
 
 Include here (at minimum) links to:
 
-* Project description/summary/charter
-* Functional Requirements Documentation
+* Project description/summary/charter - https://github.com/asrithadaida/GDP_ECommerce_Project/wiki/Project-Charter-(Iteration-1)
+* Functional Requirements Documentation - 
+[Functional Requirements List - Final.docx](https://github.com/asrithadaida/GDP_ECommerce_Project/files/15192814/Functional.Requirements.List.-.Final.docx)
+
 
 ### Features
 
