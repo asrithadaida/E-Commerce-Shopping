@@ -2,7 +2,7 @@
 
 ## Happy Feet
 
-## Last updated: [date]
+## Last updated: [05-02-2024]
 
 ----
 
@@ -70,24 +70,87 @@ Include here (at minimum) links to:
 ### Test Deliverables
 
   * Test cases for each function requirement
-  * Test reports detailing test results and issues occured.
+  
 
 #### Login
 
 | Requirement | Test Case Description | Test Type | Person Responsible | Completed |
 | ----------- | --------------------- | --------- | ------------------ | --------- |
-| FR 1.1 | Verify successful registration of account| Unit | | |
-| FR 1.2 | 
-| User profiles | Ensuring the profile creation and update |manual testing | | |
-| Product upload | Validating the image upload functionality | Unit | | |
-| Product search | Accurate search results display| functional | | |
-| Secure Online payments | Simulating the payment transaction | | |
-| Reviews and Ratings | Verify feedback submission and rating system functionality| | |
-| WishList| Verify the products added to wishlist | | |
-| 
+| FR 1.1 (User Account) | Verify successful registration of account| Unit | | |
+| FR 1.2 | Verify the login with correct credentials | Unit | | |
+| FR 1.3 | Verify the login with incorrect credentials | Unit| | |
 
-#### Another feature
+###  Password
 
 | Requirement | Test Case Description | Test Type | Person Responsible | Completed |
 | ----------- | --------------------- | --------- | ------------------ | --------- |
-| | | | | |
+| FR 1.4 (Forgot passowrd) | Verify the forgot password link functionality| Functional | | |
+
+####  User Profile
+| Requirement | Test Case Description | Test Type | Person Responsible | Completed |
+| ----------- | --------------------- | --------- | ------------------ | --------- |
+| FR 1.5 (User profile) | Verify the user profile creation and update | Functional | | |
+| FR 1.5 | Verify the user profile logout functionality | Functional | | |
+
+####  Product Upload
+| Requirement | Test Case Description | Test Type | Person Responsible | Completed |
+| ----------- | --------------------- | --------- | ------------------ | --------- |
+| FR 1.6 (Product Upload) |  Validating the image upload functionality | Functional | | |
+| FR 1.6 | Verify the correct images for all types and categories of shoes| Functional | | |
+
+####  Product Search
+| Requirement | Test Case Description | Test Type | Person Responsible | Completed |
+| ----------- | --------------------- | --------- | ------------------ | --------- |
+| FR 1.7 (Product Search) |   Accurate search results display | Functional | | |
+| FR 1.7 | Verify the correct search functionality for every category of shoes| Functional | | |
+| FR 1.7 | Verify by giving the incorrect names in the search | Functional | | |
+
+
+####  Online Payment
+| Requirement | Test Case Description | Test Type | Person Responsible | Completed |
+| ----------- | --------------------- | --------- | ------------------ | --------- |
+| FR 1.8 (Secured Online payment) |   Simulating the payment transaction | Functional | | |
+| FR 1.8 | Verifying the transaction by giving valid card details| Functional | | |
+| FR 1.8 | Verifying the transaction by giving invalid card details | Functional| | |
+
+#### Reviews and Ratings
+| Requirement | Test Case Description | Test Type | Person Responsible | Completed |
+| ----------- | --------------------- | --------- | ------------------ | --------- |
+| FR 1.9 (Reviews and Ratings) | Verify feedback submission and rating system functionality | Functional| |
+| FR 1.9 | Verify the reviews buttons in the product page |Functional | | |
+| FR 1.9 | Verify the reviews dispplayed in the homepage |Functional | | |
+| FR 1.9 | Verify the ratings of the product | Functional| | |
+
+#### Wishlist
+| Requirement | Test Case Description | Test Type | Person Responsible | Completed |
+| ----------- | --------------------- | --------- | ------------------ | --------- | 
+| FR 2.0 (Wishlist) | Verify by adding the products to wishlist | Functional| | |
+| FR 2.0 | Verify the added products in the wishlist | Functional | | |
+| FR 2.0 | Verify by removing the products from wishlist | Functional | | |
+
+#### Delivery
+| Requirement | Test Case Description | Test Type | Person Responsible | Completed |
+| ----------- | --------------------- | --------- | ------------------ | --------- | 
+| FR 2.1 | Verify the delivery address can be added in the application | Functional | | |
+| FR 2.1 | Verify that the delivery options are available to each and every available product | Functional | | |
+| FR 2.2 | Verify the returns and refunds functionality | Functional | |
+
+#### Order Processing
+| Requirement | Test Case Description | Test Type | Person Responsible | Completed |
+| ----------- | --------------------- | --------- | ------------------ | --------- | 
+| FR 2.3 | Verify the order processing functionality | Functional | | |
+
+#### Cart
+| Requirement | Test Case Description | Test Type | Person Responsible | Completed |
+| ----------- | --------------------- | --------- | ------------------ | --------- | 
+| FR 2.4 | Verify that we can modify to add or delete the products in the cart | Functional | | | 
+
+
+
+
+
+
+
+
+
+
