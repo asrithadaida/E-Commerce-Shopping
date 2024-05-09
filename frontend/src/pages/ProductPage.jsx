@@ -10,6 +10,7 @@ import {
   Form,
   ListGroupItem
 } from 'react-bootstrap';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -24,6 +25,7 @@ import Message from '../components/Message';
 import Meta from '../components/Meta';
 import { addCurrency } from '../utils/addCurrency';
 import Reviews from '../components/Reviews';
+import { addToList } from '../slices/wishlistSlice';
 
 const ProductPage = () => {
   const { id: productId } = useParams();
@@ -49,6 +51,10 @@ const ProductPage = () => {
     dispatch(addToCart({ ...product, qty }));
     navigate('/cart');
   };
+  const addToListHandler = () => {
+    dispatch(addToList({...product,qty}));
+    navigate('/wishlist');
+  }
   const submitHandler = async e => {
     e.preventDefault();
     try {
@@ -164,14 +170,18 @@ const ProductPage = () => {
                   )}
                   <ListGroupItem>
                     <Button
-                      className='w-100'
+                      className='w-75'
                       variant='warning'
                       type='button'
                       disabled={product.countInStock === 0}
                       onClick={addToCartHandler}
+                      style={{float: 'left', marginRight: "20px"}}
                     >
                       Add To Cart
                     </Button>
+                    {/* <FavoriteIcon aria-label="delete" disabled color="primary" onClick={addToListHandler}>
+                      <i className="fas fa-heart" />
+                    </FavoriteIcon> */}
                   </ListGroupItem>
                 </ListGroup>
               </Card>

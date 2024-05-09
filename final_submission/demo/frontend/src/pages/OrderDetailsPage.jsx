@@ -224,7 +224,7 @@ const OrderDetailsPage = () => {
                       <Col>{addCurrency(order?.totalPrice)}</Col>
                     </Row>
                   </ListGroup.Item>
-                  {!order?.isPaid && !userInfo.isAdmin && (
+                  {/* {!order?.isPaid && !userInfo.isAdmin && (
                     <ListGroup.Item>
                       <Button
                         className='w-100'
@@ -236,7 +236,7 @@ const OrderDetailsPage = () => {
                         Pay Order
                       </Button>
                     </ListGroup.Item>
-                  )}
+                  )} */}
                   {userInfo &&
                     userInfo.isAdmin &&
                     order?.isPaid &&

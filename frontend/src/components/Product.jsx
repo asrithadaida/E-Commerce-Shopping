@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, ListGroupItem } from 'react-bootstrap';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addCurrency } from '../utils/addCurrency';
@@ -31,17 +32,20 @@ const Product = ({ product }) => {
           <Card.Title as='div' className='product-title'>
             <strong>{product.name}</strong>
           </Card.Title>
-{/* 
+{ 
           <Card.Text as='div' className='mb-3'>
             <Rating
               value={product.rating}
               text={`(${product.numReviews} reviews)`}
             /> 
-          </Card.Text>*/}
+          </Card.Text>}
           <Card.Text as='h3'>{addCurrency(product.price)}</Card.Text>
         </Card.Body>
       </Link>
+      <ListGroupItem>
       <Button
+        className='w-75'
+        style={{float: 'left', marginRight: '20px'}}
         variant='warning'
         type='button'
         disabled={product.countInStock === 0}
@@ -49,6 +53,10 @@ const Product = ({ product }) => {
       >
         Add To Cart
       </Button>
+      <FavoriteIcon aria-label="delete" disabled color="primary">
+                      <i className="fas fa-heart" />
+                    </FavoriteIcon>
+                    </ListGroupItem>
     </Card>
   );
 };

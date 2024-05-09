@@ -152,13 +152,17 @@ const OrderDetailsPage = () => {
                   <div className='mb-3'>
                     <strong>Method:</strong> {order?.paymentMethod}
                   </div>
-                  {order?.isPaid ? (
+                  {/* {order?.isPaid ? (
                     <Message variant={'success'}>
                       Paid on {new Date(order?.paidAt).toLocaleString()}
                     </Message>
                   ) : (
                     <Message variant={'danger'}>{'Not paid'}</Message>
-                  )}
+                  )} */}
+                  <Message variant={'success'}>
+                      Paid on {new Date(order?.paidAt).toLocaleString()}
+                    </Message>
+
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <h2>Order Items </h2>
@@ -224,7 +228,7 @@ const OrderDetailsPage = () => {
                       <Col>{addCurrency(order?.totalPrice)}</Col>
                     </Row>
                   </ListGroup.Item>
-                  {!order?.isPaid && !userInfo.isAdmin && (
+                  {/* {!order?.isPaid && !userInfo.isAdmin && (
                     <ListGroup.Item>
                       <Button
                         className='w-100'
@@ -236,7 +240,7 @@ const OrderDetailsPage = () => {
                         Pay Order
                       </Button>
                     </ListGroup.Item>
-                  )}
+                  )} */}
                   {userInfo &&
                     userInfo.isAdmin &&
                     order?.isPaid &&

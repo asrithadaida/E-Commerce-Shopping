@@ -9,6 +9,9 @@ import { logout } from '../slices/authSlice';
 import { toast } from 'react-toastify';
 import SearchBox from './SearchBox';
 
+
+
+
 const Header = () => {
   const { cartItems } = useSelector(state => state.cart);
   const { userInfo } = useSelector(state => state.auth);
@@ -62,6 +65,12 @@ const Header = () => {
                 )}
               </Nav.Link>
             </LinkContainer>
+            <LinkContainer to='/wishlist'>
+              <Nav.Link>                
+                Wishlist                
+              </Nav.Link>
+            </LinkContainer>
+            
             {userInfo ? (
               <NavDropdown title={`Hello👋, ${userInfo.name}`} id='username'>
                 <LinkContainer to='/profile'>

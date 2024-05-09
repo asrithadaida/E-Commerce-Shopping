@@ -28,6 +28,7 @@ import AdminProfilePage from '../pages/admin/AdminProfilePage';
 import AdminListPage from '../pages/admin/AdminListPage';
 import ResetPasswordRequestPage from '../pages/ResetPasswordRequestPage';
 import ResetPasswordPage from '../pages/ResetPasswordPage';
+import Wishlist from '../../../../../frontend/src/pages/wishlist';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: '/reset-password/:id/:token',
         element: <ResetPasswordPage />
+      },
+      {
+        path: '/wishlist',
+        element: <Wishlist/>
       },
       {
         path: '/login',

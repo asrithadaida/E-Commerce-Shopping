@@ -24,3 +24,10 @@ export const updateCart = state => {
 
   return state;
 };
+
+export const updateList = state =>{
+  localStorage.setItem('wlist', JSON.stringify(state));
+
+  return state;
+
+}

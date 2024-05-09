@@ -8,6 +8,7 @@ import { useLogoutMutation } from '../slices/usersApiSlice';
 import { logout } from '../slices/authSlice';
 import { toast } from 'react-toastify';
 import SearchBox from './SearchBox';
+import Wishlist from '../../../../../frontend/src/pages/wishlist';
 
 const Header = () => {
   const { cartItems } = useSelector(state => state.cart);
@@ -62,6 +63,11 @@ const Header = () => {
                 )}
               </Nav.Link>
             </LinkContainer>
+            <LinkContainer to=>
+                
+            </LinkContainer>
+
+
             {userInfo ? (
               <NavDropdown title={`Hello👋, ${userInfo.name}`} id='username'>
                 <LinkContainer to='/profile'>
