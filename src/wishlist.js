@@ -1,10 +1,13 @@
 // src/components/Wishlist.js
-import React from 'react';
+import React, { useState } from 'react';
 
-const Wishlist = ({ wishlistItems, products }) => {
+const Wishlist = ({ products = [] }) => {
+  const [wishlistItems, setWishlistItems] = useState([]);
+
   const addToWishlist = (product) => {
-    // Add product to the wishlistItems array
-    // This implementation depends on your application's logic
+    if (!wishlistItems.find(item => item.id === product.id)) {
+      setWishlistItems(prevItems => [...prevItems, product]);
+    }
   };
 
   return (

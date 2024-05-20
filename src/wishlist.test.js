@@ -1,35 +1,39 @@
 // src/components/Wishlist.test.js
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+//import '@testing-library/jest-dom/extend-expect';
 import Wishlist from './Wishlist';
 
 describe('Wishlist Component', () => {
-  test('renders wishlist items', () => {
-    const wishlistItems = [
-      { id: 1, name: 'Product 1', price: 20 },
-      { id: 2, name: 'Product 2', price: 30 },
-    ];
-    const { getByTestId } = render(<Wishlist wishlistItems={wishlistItems} />);
+  const products = [
+    { id: 1, name: 'loafers', price: '$50' },
+    { id: 2, name: 'sneakers', price: '$60' },
+    { id: 3, name: 'formal shoes', price: '$70' },
+    { id: 4, name: 'casual shoes', price: '$40' },
+    { id: 5, name: 'sports shoes', price: '$80' },
+  ];
 
-    wishlistItems.forEach(item => {
-      expect(getByTestId(`wishlist-item-${item.id}`)).toBeInTheDocument();
-      expect(getByTestId(`wishlist-item-name-${item.id}`)).toHaveTextContent(item.name);
-      expect(getByTestId(`wishlist-item-price-${item.id}`)).toHaveTextContent(item.price.toString());
+  test('renders wishlist and available products', () => {
+    const { getByText } = render(<Wishlist products={products} />);
+    
+    // Check that all products are rendered
+    products.forEach(product => {
+      expect(getByText(product.name)).toBeInTheDocument();
     });
+
+    // Check that the wishlist is empty
+    expect(getByText('No items in wishlist')).toBeInTheDocument();
   });
 
   test('adds product to wishlist on click', () => {
-    const wishlistItems = [];
-    const products = [
-      { id: 1, name: 'Product 1', price: 20 },
-      { id: 2, name: 'Product 2', price: 30 },
-    ];
-    const { getByTestId } = render(<Wishlist wishlistItems={wishlistItems} products={products} />);
-
-    const addToWishlistButton = getByTestId('add-to-wishlist-button-1'); // Assuming button for product with id 1
+    const { getByTestId, getByText } = render(<Wishlist products={products} />);
+    
+    const addToWishlistButton = getByTestId('add-to-wishlist-button-1');
     fireEvent.click(addToWishlistButton);
 
-    expect(wishlistItems.length).toBe(1);
-    expect(wishlistItems[0]).toEqual(products[0]);
+    // Check that the product is added to the wishlist
+    expect(getByTestId('wishlist-item-1')).toBeInTheDocument();
+    expect(getByTestId('wishlist-item-name-1')).toHaveTextContent('loafers');
+    expect(getByTestId('wishlist-item-price-1')).toHaveTextContent('$50');
   });
 });

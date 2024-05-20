@@ -1,20 +1,77 @@
-// Cart.test.js
+// src/components/Cart.test.js
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 //import '@testing-library/jest-dom/extend-expect';
 import Cart from './Cart';
 
-test('adds item to cart when button is clicked', () => {
-  const { getByTestId } = render(<Cart />);
-  const itemsElement = getByTestId('items');
-  const buttonElement = getByTestId('add-item-btn');
+describe('Modify and View Cart Component', () => {
+  test('adds products to the cart', () => {
+    render(<Cart />);
+    const cartInput = screen.getByTestId('cart-input');
+    const addButton = screen.getByTestId('add-button');
 
-  // Initial number of items should be 0
-  expect(itemsElement).toHaveTextContent('0');
+    fireEvent.change(cartInput, { target: { value: 'sneakers' } });
+    fireEvent.click(addButton);
 
-  // Click the button
-  fireEvent.click(buttonElement);
+    const cartItems = screen.getAllByTestId('cart-item');
+    expect(cartItems.length).toBe(1);
+    expect(cartItems[0]).toHaveTextContent('sneakers');
+  });
 
-  // After clicking the button, number of items should be incremented
-  expect(itemsElement).toHaveTextContent('1');
+  test('removes products from the cart', () => {
+    render(<Cart />);
+    const cartInput = screen.getByTestId('cart-input');
+    const addButton = screen.getByTestId('add-button');
+
+    fireEvent.change(cartInput, { target: { value: 'sneakers' } });
+    fireEvent.click(addButton);
+
+    let cartItems = screen.getAllByTestId('cart-item');
+    expect(cartItems.length).toBe(1);
+
+    const removeButton = screen.getByTestId('remove-button-0');
+    fireEvent.click(removeButton);
+
+    cartItems = screen.queryAllByTestId('cart-item');
+    expect(cartItems.length).toBe(0);
+  });
+
+  test('modifies products in the cart', () => {
+    render(<Cart />);
+    const cartInput = screen.getByTestId('cart-input');
+    const addButton = screen.getByTestId('add-button');
+
+    fireEvent.change(cartInput, { target: { value: 'sneakers' } });
+    fireEvent.click(addButton);
+
+    let cartItems = screen.getAllByTestId('cart-item');
+    expect(cartItems.length).toBe(1);
+
+    const modifyButton = screen.getByTestId('modify-button-0');
+    window.prompt = jest.fn().mockReturnValue('formal shoes');
+    fireEvent.click(modifyButton);
+
+    cartItems = screen.getAllByTestId('cart-item');
+    expect(cartItems.length).toBe(1);
+    expect(cartItems[0]).toHaveTextContent('formal shoes');
+  });
+
+  test('views products in the cart', () => {
+    render(<Cart />);
+    const cartInput = screen.getByTestId('cart-input');
+    const addButton = screen.getByTestId('add-button');
+
+    const products = ['sneakers', 'formal shoes', 'sports shoes', 'casual shoes', 'loafers'];
+
+    products.forEach(product => {
+      fireEvent.change(cartInput, { target: { value: product } });
+      fireEvent.click(addButton);
+    });
+
+    const cartItems = screen.getAllByTestId('cart-item');
+    expect(cartItems.length).toBe(5);
+    products.forEach((product, index) => {
+      expect(cartItems[index]).toHaveTextContent(product);
+    });
+  });
 });
