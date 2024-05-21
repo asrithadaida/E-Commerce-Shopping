@@ -1,4 +1,3 @@
-/*
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
@@ -17,12 +16,13 @@ import { FaIndianRupeeSign } from 'react-icons/fa6';
 
 import Message from '../components/Message';
 import { addToList, removeFromList } from '../slices/wishlistSlice';
+import { addToCart, removeFromCart } from '../slices/cartSlice';
 import Meta from '../components/Meta';
 import { addCurrency } from '../utils/addCurrency';
-const Wishlist = () => {
+const ListPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { wishlistItems } = useSelector(state => state.wlist);
+  const { wishlistItems } = useSelector(state => state.wishlist);
 
   const addToListHandler = async (product, qty) => {
     dispatch(addToList({ ...product, qty }));
@@ -32,23 +32,46 @@ const Wishlist = () => {
     dispatch(removeFromList(id));
   };
 
+  /*const Product = ({ product }) => {
+    const [qty, setQty] = useState(1);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+  }
+  //   const addToCartHandler = () => {
+  //     dispatch(addToCart({ ...product, qty }));
+  //     navigate('/cart');
+  //   }; */
+
+   const addToCartHandler = async (product, qty) => {
+     dispatch(addToCart({ ...product, qty }));
+     navigate('/cart');
+   };
+
+  
+
   const checkoutHandler = () => {
     navigate('/login?redirect=/shipping');
   };
 
   return (
     <>
-      <Meta title={'Shopping Cart'} />
-      <h1>Wishlist</h1>
+      <Meta title={'Wishlisted'} />
+      <h1>Wishlisted Items</h1>
       <Row>
-        <Col md={8}>
+       {/* <Col md={8}>
+         {!listItems?.length  ? (
+            <Message> 
+              Your wishlist is empty 👉 <Link to='/'>Go Back</Link>
+            </Message>
+          ): ""} */}
+          <Col md={8}>
           {wishlistItems.length === 0 && (
             <Message>
               Your wishlist is empty 👉 <Link to='/'>Go Back</Link>
             </Message>
           )}
           <ListGroup variant='flush'>
-            {wishlistItems.map(item => (
+            {wishlistItems?.map(item => (
               <ListGroup.Item className='my-3' key={item._id}>
                 <Row>
                   <Col md={2}>
@@ -65,19 +88,17 @@ const Wishlist = () => {
                   </Col>
                   <Col md={2}>{addCurrency(item.price)}</Col>
                   <Col md={2}>
-                    <Form.Control
-                      as='select'
-                      value={item.qty}
-                      onChange={e =>
-                        addToListHandler(item, Number(e.target.value))
-                      }
-                    >
-                      {Array.from({ length: item.countInStock }, (_, i) => (
-                        <option key={i + 1} value={i + 1}>
-                          {i + 1}
-                        </option>
-                      ))}
-                    </Form.Control>
+                  <Button
+                    //className='w-200'
+                    style={{float: 'left', marginRight: '20px'}}
+                    variant='warning'
+                    type='button'
+                   // disabled={product.countInStock === 0}
+                   onClick={() => {addToCartHandler(item, 1); removeFromListHandler(item._id);}}
+                  //onClick={() => {removeFromListHandler(item)}}
+                  >
+                  Add To Cart
+                  </Button>                
                   </Col>
                   <Col md={2}>
                     <Button
@@ -92,9 +113,8 @@ const Wishlist = () => {
               </ListGroup.Item>
             ))}
           </ListGroup>
-        </Col>
-        {/* 
-        <Col md={4}>
+         </Col>
+        {/*<Col md={4}>
           {cartItems.length > 0 && (
             <Card>
               <ListGroup variant='flush'>
@@ -118,20 +138,16 @@ const Wishlist = () => {
                     disabled={cartItems.length === 0}
                     onClick={checkoutHandler}
                   >
-                    Proceed To Checkout
+                    Add to Cart
                   </Button>
                 </ListGroupItem>
               </ListGroup>
             </Card>
           )}
-        </Col> 
-        
+        </Col> */}
       </Row>
     </>
   );
 };
 
-export default Wishlist;
-
-*/
-<h1>Wishlist</h1>
+export default ListPage;

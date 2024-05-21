@@ -33,6 +33,8 @@ const ProductPage = () => {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
 
+  
+
   const { userInfo } = useSelector(state => state.auth);
 
   const {
@@ -46,6 +48,12 @@ const ProductPage = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  // const sizeList = product.size.map((item) => (
+  //   <li>
+  //     {item}
+  //   </li>
+  //  ));
 
   const addToCartHandler = () => {
     dispatch(addToCart({ ...product, qty }));
@@ -124,6 +132,11 @@ const ProductPage = () => {
                   <strong> About this item:</strong>
                   {product.description}
                 </ListGroup.Item>
+                {/* <ListGroup.Item>
+                  <strong>Size</strong>
+                  {product.size.map(val=><span>`{val},  `</span>)}
+
+                </ListGroup.Item> */}
               </ListGroup>
             </Col>
             <Col md={3}>
@@ -174,14 +187,15 @@ const ProductPage = () => {
                       variant='warning'
                       type='button'
                       disabled={product.countInStock === 0}
-                      onClick={addToCartHandler}
+                     // onClick={addToCartHandler}
+                     onClick={addToList}
                       style={{float: 'left', marginRight: "20px"}}
                     >
                       Add To Cart
                     </Button>
-                    {/* <FavoriteIcon aria-label="delete" disabled color="primary" onClick={addToListHandler}>
+                    { <FavoriteIcon aria-label="delete" disabled color="primary" onClick={addToListHandler}>
                       <i className="fas fa-heart" />
-                    </FavoriteIcon> */}
+                    </FavoriteIcon> }
                   </ListGroupItem>
                 </ListGroup>
               </Card>

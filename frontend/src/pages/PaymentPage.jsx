@@ -9,7 +9,7 @@ import CheckoutSteps from '../components/CheckoutSteps';
 import Meta from '../components/Meta';
 import axios from 'axios';
 const Payment = () => {
-  const [paymentMethod, setPaymentMethod] = useState('Razorpay');
+  const [paymentMethod, setPaymentMethod] = useState('');
   const [cardNumber, setCardNumber] = useState('');
   const [expiry, setExpiry] = useState('');
   const [cvv, setCvv] = useState('');
@@ -50,6 +50,7 @@ const Payment = () => {
     e.preventDefault();
     dispatch(savePaymentMethod(paymentMethod));
     navigate('/place-order');
+    handleSubmit(e);
   };
 
   const handlePaymentMethodChange = (event) => {

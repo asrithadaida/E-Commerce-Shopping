@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  search: ''
+ // search: '',
+  filter: ''
 };
 
 export const searchProductSlice = createSlice({
@@ -9,6 +10,11 @@ export const searchProductSlice = createSlice({
   initialState,
   reducers: {
     searchProduct: (state, action) => {
+      
+      console.log("invoked slice filter");
+      state.search = action.payload;
+    },
+    filterProduct: (state, action) => {
       state.search = action.payload;
     },
     clearSearch: state => {
@@ -18,6 +24,6 @@ export const searchProductSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { searchProduct, clearSearch } = searchProductSlice.actions;
+export const { searchProduct, clearSearch, filterProduct } = searchProductSlice.actions;
 
 export default searchProductSlice.reducer;

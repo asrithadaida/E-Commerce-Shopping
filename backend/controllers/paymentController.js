@@ -1,14 +1,14 @@
 import crypto from 'crypto';
 import Razorpay from 'razorpay';
-/*
-const config = (req, res) =>
-  res.send({
+
+const config = (req, res) =>{}
+  /*res.send({
     razorpayKeyId: process.env.RAZORPAY_KEY_ID,
     razorpayKeySecret: process.env.RAZORPAY_KEY_SECRET
-  });
+  }); */
 
-const order = async (req, res, next) => {
-  try {
+const order = async (req, res, next) => {}
+ /* try {
     const razorpay = new Razorpay({
       key_id: process.env.RAZORPAY_KEY_ID,
       key_secret: process.env.RAZORPAY_KEY_SECRET
@@ -45,7 +45,7 @@ const validate = (req, res) => {
   }
  */ 
   res.status(201).json({
-    id: razorpay_payment_id,
+   // id: razorpay_payment_id,
     status: 'success',
     message: 'payment is successful',
     updateTime: new Date().toLocaleTimeString()

@@ -28,7 +28,7 @@ import AdminProfilePage from '../pages/admin/AdminProfilePage';
 import AdminListPage from '../pages/admin/AdminListPage';
 import ResetPasswordRequestPage from '../pages/ResetPasswordRequestPage';
 import ResetPasswordPage from '../pages/ResetPasswordPage';
-//import Wishlist from '../pages/wishlist';
+import Wishlist from '../pages/wishlist';
 
 const router = createBrowserRouter([
   {
@@ -48,10 +48,10 @@ const router = createBrowserRouter([
         path: '/cart',
         element: <CartPage />
       },
-   /*   {
+      {
         path: '/wishlist',
         element: <Wishlist />
-      }, */
+      }, 
 
       {
         path: '/reset-password',

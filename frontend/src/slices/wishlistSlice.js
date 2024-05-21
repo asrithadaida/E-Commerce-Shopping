@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { updateList }  from '../utils/cartUtils';
 
-const initialState = localStorage.getItem('cart')
-  ? JSON.parse(localStorage.getItem('cart'))
+const initialState = localStorage.getItem('wishlist')
+  ? JSON.parse(localStorage.getItem('wishlist'))
   : { wishlistItems: [], shippingAddress: {}, paymentMethod: 'Razorpay' };
 
 const listSlice = createSlice({

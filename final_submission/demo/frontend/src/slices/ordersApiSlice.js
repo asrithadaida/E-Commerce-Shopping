@@ -58,7 +58,7 @@ export const {
   useCreateOrderMutation,
   usePayOrderMutation,
   useUpdateDeliverMutation,
-  useGetRazorpayApiKeyQuery,
+//  useGetRazorpayApiKeyQuery,
   useGetMyOrdersQuery,
   useGetOrdersQuery
 } = ordersApiSlice;

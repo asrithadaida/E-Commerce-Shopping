@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 
 import { useParams, Link } from 'react-router-dom';
-import { Row, Col, ListGroup, Button, Image, Card } from 'react-bootstrap';
+
+import { useNavigate } from 'react-router-dom';
+import { Row, Col, ListGroup, Button, Image, Card, Form } from 'react-bootstrap';
 import {
   useGetOrderDetailsQuery,
   usePayOrderMutation,
@@ -14,13 +16,15 @@ import { FaIndianRupeeSign } from 'react-icons/fa6';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 import ServerError from '../components/ServerError';
+ 
 
 import axios from 'axios';
 import Meta from '../components/Meta';
 import { addCurrency } from '../utils/addCurrency';
-// import { RAZORPAY_URL } from '../constants';
+ import { PAYMENT_URL } from '../constants';
 const OrderDetailsPage = () => {
   const { id: orderId } = useParams();
+  const navigate = useNavigate();
   // console.log(useGetOrderDetailsQuery());
   const { data: order, isLoading, error } = useGetOrderDetailsQuery(orderId);
 
@@ -30,9 +34,57 @@ const OrderDetailsPage = () => {
 
   const { userInfo } = useSelector(state => state.auth);
 
-  const { data: razorpayApiKey } = useGetRazorpayApiKeyQuery();
+  const checkoutHandler = () => {
+    navigate('/login?redirect=/shipping');
+  };
 
-  const paymentHandler = async e => {
+  const submitHandler = () =>{
+    this.setState({
+      isDelivered: true
+    });
+  }
+
+ // const { data: razorpayApiKey } = useGetRazorpayApiKeyQuery();
+
+const paymentHandler = async e => {
+  try {
+    const response = await axios.post(`http://localhost:3000/api/v1/orders/${orderId}/pay
+    `, {
+      id: 'payment_id',
+      status: 'paid',
+      updateTime: new Date().toISOString(),
+      email: 'customer@example.com'
+      
+    });
+    toast.success("Payment Successful");
+     navigate(`/order/${order._id}`);
+  } catch (error) {
+    toast.error(error?.data?.message || error.error);
+  }
+}
+
+
+// const updateOrder = async () => {
+//   setLoading(true);
+//   try {
+//     const response = await axios.post(`http://your-backend-url.com/orders/${id}/update`, {
+//       id: 'payment_id',
+//       status: 'paid',
+//       updateTime: new Date().toISOString(),
+//       email: 'customer@example.com'
+//     });
+
+//     console.log('Order updated:', response.data);
+//   } catch (error) {
+//     setError(error.message);
+//   } finally {
+//     setLoading(false);
+//   }
+// };
+
+
+ /* 
+ const paymentHandler = async e => {
     try {
       // Make the API call to Razorpay
 
@@ -98,7 +150,7 @@ const OrderDetailsPage = () => {
     } catch (error) {
       toast.error(error?.data?.message || error.error);
     }
-  };
+  }; */
 
   const deliveredHandler = async () => {
     try {
@@ -152,16 +204,16 @@ const OrderDetailsPage = () => {
                   <div className='mb-3'>
                     <strong>Method:</strong> {order?.paymentMethod}
                   </div>
-                  {/* {order?.isPaid ? (
+                   {order?.isPaid ? (
                     <Message variant={'success'}>
                       Paid on {new Date(order?.paidAt).toLocaleString()}
                     </Message>
                   ) : (
                     <Message variant={'danger'}>{'Not paid'}</Message>
-                  )} */}
-                  <Message variant={'success'}>
-                      Paid on {new Date(order?.paidAt).toLocaleString()}
-                    </Message>
+                  )} 
+                  {/* <Message variant={'success'}>
+                      Paid with {order?.paymentMethod}
+                    </Message> */}
 
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -196,6 +248,41 @@ const OrderDetailsPage = () => {
                     ))}
                   </ListGroup>
                 </ListGroup.Item>
+                
+                <ListGroup>
+                {order?.isDelivered===false ? (
+                <ListGroup.Item>
+           
+            <h2>Return the Item</h2>
+
+          
+            <Form onSubmit={submitHandler}>
+              
+              <Form.Group className='my-2' controlId='comment'>
+                <Form.Label>Comment</Form.Label>
+                <Form.Control
+                  as='textarea'
+                  row='3'
+                  required
+                //  value={comment}
+                //  onChange={e => setComment(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
+              <Button
+                className='w-100'
+              //  disabled={loading}
+                type='submit'
+                variant='warning'
+              >
+                Submit
+              </Button>
+            </Form>
+          
+                </ListGroup.Item>
+                ):(
+                  <Message ></Message>
+                )}
+                </ListGroup>
               </ListGroup>
             </Col>
             <Col md={4}>
@@ -228,19 +315,19 @@ const OrderDetailsPage = () => {
                       <Col>{addCurrency(order?.totalPrice)}</Col>
                     </Row>
                   </ListGroup.Item>
-                  {/* {!order?.isPaid && !userInfo.isAdmin && (
+                   {!order?.isPaid && !userInfo.isAdmin && (
                     <ListGroup.Item>
                       <Button
                         className='w-100'
                         variant='warning'
                         onClick={paymentHandler}
-                        disabled={isPayOrderLoading}
+                        
                         style={{ marginBottom: '10px' }}
                       >
                         Pay Order
                       </Button>
                     </ListGroup.Item>
-                  )} */}
+                  )} 
                   {userInfo &&
                     userInfo.isAdmin &&
                     order?.isPaid &&

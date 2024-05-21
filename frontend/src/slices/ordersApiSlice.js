@@ -1,4 +1,4 @@
-import { ORDERS_URL, RAZORPAY_URL } from '../constants';
+import { ORDERS_URL, PAYMENT_URL } from '../constants';
 import { apiSlice } from './apiSlice';
 
 export const ordersApiSlice = apiSlice.injectEndpoints({
@@ -25,9 +25,11 @@ export const ordersApiSlice = apiSlice.injectEndpoints({
     }),
     payOrder: builder.mutation({
       query: ({ orderId, details }) => ({
-        url: `${ORDERS_URL}/${orderId}/pay`,
+      //  console.log("in payorder");
+        url: `${ORDERS_URL}/664cd517e35bbbe56eebe262/pay`,
         method: 'PUT',
         body: { ...details }
+        
       }),
       invalidatesTags: ['Order']
     }),
@@ -38,12 +40,7 @@ export const ordersApiSlice = apiSlice.injectEndpoints({
       }),
       invalidatesTags: ['Order']
     }),
-    getRazorpayApiKey: builder.query({
-      query: () => ({
-        url: `${RAZORPAY_URL}/razorpay/config`
-      }),
-      providesTags: ['Order']
-    }),
+    
     getOrders: builder.query({
       query: () => ({
         url: ORDERS_URL

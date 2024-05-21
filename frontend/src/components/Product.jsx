@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addCurrency } from '../utils/addCurrency';
 import { addToCart } from '../slices/cartSlice';
+import { addToList } from '../slices/wishlistSlice';
 import Rating from './Rating';
 
 const Product = ({ product }) => {
@@ -16,6 +17,10 @@ const Product = ({ product }) => {
     dispatch(addToCart({ ...product, qty }));
     navigate('/cart');
   };
+  const addToListHandler = () => {
+    dispatch(addToList({...product,qty}));
+    navigate('/wishlist');
+  }
   return (
     <Card className='my-3 p-3 rounded text-center'>
       <Link
@@ -53,7 +58,7 @@ const Product = ({ product }) => {
       >
         Add To Cart
       </Button>
-      <FavoriteIcon aria-label="delete" disabled color="primary">
+      <FavoriteIcon aria-label="delete" disabled color="primary" onClick={addToListHandler}>
                       <i className="fas fa-heart" />
                     </FavoriteIcon>
                     </ListGroupItem>

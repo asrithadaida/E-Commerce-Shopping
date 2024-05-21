@@ -99,7 +99,7 @@ const updateOrderToPaid = async (req, res) => {
   try {
     const { id: orderId } = req.params;
     const order = await Order.findById(orderId);
-
+    console.log("found order==>"+ order);
     if (!order) {
       res.statusCode = 404;
       throw new Error('Order not found!');
@@ -107,12 +107,12 @@ const updateOrderToPaid = async (req, res) => {
 
     order.isPaid = true;
     order.paidAt = new Date();
-    order.paymentResult = {
-      id: req.body.id,
-      status: req.body.status,
-      update_time: req.body.updateTime,
-      email_address: req.body.email
-    };
+    // order.paymentResult = {
+    //   id: req.body.id,
+    //   status: req.body.status,
+    //   update_time: req.body.updateTime,
+    //   email_address: req.body.email
+    // };
 
     const updatedOrder = await order.save();
 

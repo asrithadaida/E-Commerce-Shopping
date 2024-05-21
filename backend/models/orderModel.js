@@ -50,6 +50,7 @@ const orderSchema = new mongoose.Schema(
     // Payment and delivery status
     isPaid: { type: Boolean, required: true, default: false },
     paidAt: { type: Date },
+    deliveryStatus: { type: String, default:"Processing"},
     isDelivered: { type: Boolean, required: true, default: false },
     deliveredAt: { type: Date }
   },

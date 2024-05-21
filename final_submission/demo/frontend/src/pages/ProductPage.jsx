@@ -68,6 +68,8 @@ const ProductPage = () => {
     setRating(0);
     setComment('');
   };
+  console.log({product})
+  console.log("sdssd")
   return (
     <>
       {isLoading ? (
@@ -118,6 +120,9 @@ const ProductPage = () => {
                   <strong> About this item:</strong>
                   {product.description}
                 </ListGroup.Item>
+                <ListGroup.Item>
+                  <strong> Sizess</strong>
+                                 </ListGroup.Item>
               </ListGroup>
             </Col>
             <Col md={3}>

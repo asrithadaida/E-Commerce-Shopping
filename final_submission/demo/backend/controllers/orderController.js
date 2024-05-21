@@ -99,7 +99,7 @@ const updateOrderToPaid = async (req, res) => {
   try {
     const { id: orderId } = req.params;
     const order = await Order.findById(orderId);
-
+    console.log("found order ==> "+order);
     if (!order) {
       res.statusCode = 404;
       throw new Error('Order not found!');

@@ -1,5 +1,5 @@
 // reducers/productReducer.js
-
+/*
 export const initialState = {
     filters: { category: '', minPrice: '', maxPrice: '' },
     sortBy: '',
@@ -20,5 +20,31 @@ export const initialState = {
       default:
         return state;
     }
-  };
+  }; */
+
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  search: ''
+};
+
+export const filterProductSlice = createSlice({
+  name: 'products',
+  initialState,
+  reducers: {
+    filterProduct: (state, action) => {
+      console.log("invoked filter slice");
+      state.search = action.payload;
+    },
+    clearFilter: state => {
+      state.search = '';
+    }
+  }
+});
+
+// Action creators are generated for each case reducer function
+export const { filterProduct, clearFilter } = filterProductSlice.actions;
+
+export default filterProductSlice.reducer;
+
   

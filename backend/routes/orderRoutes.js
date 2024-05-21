@@ -56,7 +56,7 @@ router.route('/')
 
 router.get('/my-orders', protect, getMyOrders);
 router.get('/:id', validator.getOrderById, validateRequest, protect, getOrderById);
-router.put('/:id/pay', validator.updateOrderToPaid, validateRequest, protect, updateOrderToPaid);
+// router.put('/:id/pay', validator.updateOrderToPaid, validateRequest, protect, updateOrderToPaid);
 router.put('/:id/deliver', validator.updateOrderToDeliver, validateRequest, protect, admin, updateOrderToDeliver);
-
+router.post('/:id/pay', updateOrderToPaid)
 export default router;

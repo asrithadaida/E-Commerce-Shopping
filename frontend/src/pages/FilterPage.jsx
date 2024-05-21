@@ -1,12 +1,12 @@
 // context/ProductContext.js
-
+/*
 import React, { createContext, useReducer } from 'react';
-import { initialState, productReducer } from '../slices/filterSlice';
+import { initialState, filterProductReducer } from '../slices/filterProductSlice';
 
 export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(productReducer, initialState);
+  const [state, dispatch] = useReducer(filterProductReducer, initialState);
 
   return (
     <ProductContext.Provider value={{ state, dispatch }}>
@@ -14,3 +14,4 @@ export const ProductProvider = ({ children }) => {
     </ProductContext.Provider>
   );
 };
+*/

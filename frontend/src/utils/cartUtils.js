@@ -26,7 +26,7 @@ export const updateCart = state => {
 };
 
 export const updateList = state =>{
-  localStorage.setItem('wlist', JSON.stringify(state));
+  localStorage.setItem('wishlist', JSON.stringify(state));
 
   return state;
 

@@ -14,6 +14,7 @@ import SearchBox from './SearchBox';
 
 const Header = () => {
   const { cartItems } = useSelector(state => state.cart);
+  const { wishlistItems } = useSelector(state => state.wishlist);
   const { userInfo } = useSelector(state => state.auth);
   const [logoutApiCall] = useLogoutMutation();
   const dispatch = useDispatch();
@@ -67,7 +68,19 @@ const Header = () => {
             </LinkContainer>
             <LinkContainer to='/wishlist'>
               <Nav.Link>                
-                Wishlist                
+                Wishlist 
+                {wishlistItems.length > 0 && (
+                  <Badge
+                    pill
+                    bg='warning'
+                    style={{ marginLeft: '5px' }}
+                    className='text-dark'
+                  >
+                    <strong>
+                      {wishlistItems.reduce((acc, item) => acc + item.qty, 0)}
+                    </strong>
+                  </Badge>
+                )}               
               </Nav.Link>
             </LinkContainer>
             

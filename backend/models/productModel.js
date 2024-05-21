@@ -69,6 +69,13 @@ const productSchema = new mongoose.Schema(
       required: true,
       default: 0
     },
+    size: [
+       {
+         name: { type: Number, required: true }
+      }
+    ],   
+    
+    
     // Quantity available in stock
     countInStock: {
       type: Number,
