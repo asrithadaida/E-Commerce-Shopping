@@ -20,24 +20,40 @@
 	</parent>
 
 	<modules>
-		<module>backend</module>
+		<module>src</module>
 
 		<module>frontend</module>
-		<module>src/components/components-service</module>
-
-		<module>src/components/ -domain</module>
-		<module>item/item-service</module>
-
-		<module>stock/stock-domain</module>
-		<module>stock/stock-service</module>
-
-		<module>order/order-domain</module>
-		<module>order/order-service</module>
-
-		<module>payment/payment-domain</module>
-		<module>payment/payment-service</module>
-
-		<module>discovery-service</module>
-		<module>zipkin-server</module>
+	
+		
 	</modules>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Brixton.SR3</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
