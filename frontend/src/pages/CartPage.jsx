@@ -110,6 +110,7 @@ const CartPage = () => {
                 </ListGroup.Item>
                 <ListGroupItem>
                   <Button
+                    id='proceedTocheckout'
                     className='w-100'
                     variant='warning'
                     type='button'

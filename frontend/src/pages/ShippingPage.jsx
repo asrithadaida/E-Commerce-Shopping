@@ -39,7 +39,7 @@ const ShippingPage = () => {
       <h1>Shipping</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group className='mb-3' controlId='address'>
-          <Form.Label>Address</Form.Label>
+          <Form.Label id='address'>Address</Form.Label>
           <Form.Control
             value={address}
             type='text'
@@ -48,7 +48,7 @@ const ShippingPage = () => {
           />
         </Form.Group>
         <Form.Group className='mb-3' controlId='city'>
-          <Form.Label>City</Form.Label>
+          <Form.Label id='city'>City</Form.Label>
           <Form.Control
             value={city}
             type='text'
@@ -57,7 +57,7 @@ const ShippingPage = () => {
           />
         </Form.Group>
         <Form.Group className='mb-3' controlId='postalCode'>
-          <Form.Label>Postal Code</Form.Label>
+          <Form.Label id='postalcode'>Postal Code</Form.Label>
           <Form.Control
             value={postalCode}
             type='text'
@@ -66,7 +66,7 @@ const ShippingPage = () => {
           />
         </Form.Group>
         <Form.Group className='mb-3' controlId='country'>
-          <Form.Label>Country</Form.Label>
+          <Form.Label id='country'>Country</Form.Label>
           <Form.Control
             value={country}
             type='text'
@@ -74,7 +74,7 @@ const ShippingPage = () => {
             onChange={e => setCountry(e.target.value)}
           />
         </Form.Group>
-        <Button className='mb-3 w-100' variant='warning' type='submit'>
+        <Button id='contShip' className='mb-3 w-100' variant='warning' type='submit'>
           Continue
         </Button>
       </Form>

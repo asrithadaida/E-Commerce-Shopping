@@ -41,8 +41,9 @@ const Product = ({ product }) => {
           <Card.Text as='h3'>{addCurrency(product.price)}</Card.Text>
         </Card.Body>
       </Link>
-      <Button
+      <Button 
         variant='warning'
+        id='addToCart'
         type='button'
         disabled={product.countInStock === 0}
         onClick={addToCartHandler}

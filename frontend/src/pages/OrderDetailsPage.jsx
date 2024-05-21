@@ -318,6 +318,7 @@ const paymentHandler = async e => {
                    {!order?.isPaid && !userInfo.isAdmin && (
                     <ListGroup.Item>
                       <Button
+                        id='payOrder'
                         className='w-100'
                         variant='warning'
                         onClick={paymentHandler}

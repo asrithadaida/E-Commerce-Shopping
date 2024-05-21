@@ -74,7 +74,7 @@ const Payment = () => {
             checked={paymentMethod === 'creditCard'}
             onChange={handlePaymentMethodChange}
           />
-          <label htmlFor="creditCard">Credit Card</label>
+          <label htmlFor="creditCard" >Credit Card</label>
         
         
           <input
@@ -88,6 +88,7 @@ const Payment = () => {
         </Col>
           
       <input
+        id='cardnum'
         type="text"
         value={cardNumber}
         onChange={(e) => setCardNumber(e.target.value)}
@@ -95,6 +96,7 @@ const Payment = () => {
         required
       />
       <input
+        id='expiry'
         type="text"
         value={expiry}
         onChange={(e) => setExpiry(e.target.value)}
@@ -102,13 +104,14 @@ const Payment = () => {
         required
       />
       <input
+        id='cvv'
         type="text"
         value={cvv}
         onChange={(e) => setCvv(e.target.value)}
         placeholder="CVV"
         required
       />
-       <Button className='mb-3 w-100' variant='warning' type='submit'>
+       <Button id='contpay' className='mb-3 w-100' variant='warning' type='submit'>
           Continue
         </Button>
    

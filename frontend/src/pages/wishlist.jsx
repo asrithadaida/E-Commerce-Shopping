@@ -89,6 +89,7 @@ const ListPage = () => {
                   <Col md={2}>{addCurrency(item.price)}</Col>
                   <Col md={2}>
                   <Button
+                    id='wAddCart'
                     //className='w-200'
                     style={{float: 'left', marginRight: '20px'}}
                     variant='warning'

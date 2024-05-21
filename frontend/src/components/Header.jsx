@@ -49,7 +49,7 @@ const Header = () => {
           <Nav className='ms-auto m-2'>
             <SearchBox />
             <LinkContainer to='/cart'>
-              <Nav.Link>
+              <Nav.Link id='cart'>
                 <FaShoppingCart style={{ marginRight: '5px' }} />
                 Cart
                 {cartItems.length > 0 && (
@@ -67,7 +67,7 @@ const Header = () => {
               </Nav.Link>
             </LinkContainer>
             <LinkContainer to='/wishlist'>
-              <Nav.Link>                
+              <Nav.Link id='wishlist'>                
                 Wishlist 
                 {wishlistItems.length > 0 && (
                   <Badge

@@ -49,6 +49,7 @@ const Product = ({ product }) => {
       </Link>
       <ListGroupItem>
       <Button
+        id='addToCart-home'
         className='w-75'
         style={{float: 'left', marginRight: '20px'}}
         variant='warning'
@@ -58,7 +59,7 @@ const Product = ({ product }) => {
       >
         Add To Cart
       </Button>
-      <FavoriteIcon aria-label="delete" disabled color="primary" onClick={addToListHandler}>
+      <FavoriteIcon id='heart-home' aria-label="delete" disabled color="primary" onClick={addToListHandler}>
                       <i className="fas fa-heart" />
                     </FavoriteIcon>
                     </ListGroupItem>
