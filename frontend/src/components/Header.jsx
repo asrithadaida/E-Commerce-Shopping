@@ -95,7 +95,7 @@ const Header = () => {
               </NavDropdown>
             ) : (
               <LinkContainer to='/login'>
-                <Nav.Link>
+                <Nav.Link id='signInHome'>
                   <FaUser style={{ marginRight: '5px' }} />
                   Sign In
                 </Nav.Link>

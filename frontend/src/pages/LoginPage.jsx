@@ -55,7 +55,7 @@ const LoginPage = () => {
       <Form onSubmit={submitHandler}>
         <Form.Group className='mb-3' controlId='email'>
           <Form.Label>Email address</Form.Label>
-          <Form.Control
+          <Form.Control id='email'
             type='email'
             value={email}
             placeholder='Enter email'
@@ -65,7 +65,7 @@ const LoginPage = () => {
         <Form.Group className='mb-3' controlId='password'>
           <Form.Label>Password</Form.Label>
           <InputGroup>
-            <Form.Control
+            <Form.Control id='password'
               type={showPassword ? 'text' : 'password'}
               value={password}
               placeholder='Enter password'
@@ -98,6 +98,7 @@ const LoginPage = () => {
           </Col>
         </Row>
         <Button
+          id='signin'
           className='mb-3 w-100'
           variant='warning'
           type='submit'
