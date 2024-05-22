@@ -37,13 +37,25 @@ const Product = ({ product }) => {
           <Card.Title as='div' className='product-title'>
             <strong>{product.name}</strong>
           </Card.Title>
-{ 
+
+          <strong>Size: </strong>
+
+  
+    {/* Display all items separated by commas */}
+    {product.size.map((item, index) => (
+      // Add a comma after each item except the last one
+      `${item[0]}${index !== product.size.length - 1 ? ', ' : ''}`
+    ))}
+  
+
+
+
           <Card.Text as='div' className='mb-3'>
             <Rating
               value={product.rating}
               text={`(${product.numReviews} reviews)`}
             /> 
-          </Card.Text>}
+          </Card.Text>
           <Card.Text as='h3'>{addCurrency(product.price)}</Card.Text>
         </Card.Body>
       </Link>

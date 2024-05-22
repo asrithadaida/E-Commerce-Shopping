@@ -19,7 +19,11 @@ export const searchProductSlice = createSlice({
     },
     clearSearch: state => {
       state.search = '';
-    }
+    },
+    // searchBySize: (state, action) => {
+    //   console.log("invoked search by size");
+    //   state.searchBySize = action.payload;
+    // },
   }
 });
 

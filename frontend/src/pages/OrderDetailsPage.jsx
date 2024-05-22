@@ -57,6 +57,7 @@ const paymentHandler = async e => {
       
     });
     toast.success("Payment Successful");
+    window.location.reload();
      navigate(`/order/${order._id}`);
   } catch (error) {
     toast.error(error?.data?.message || error.error);
@@ -190,14 +191,13 @@ const paymentHandler = async e => {
                     {order?.shippingAddress?.postalCode},
                     {order?.shippingAddress?.country} <br />
                   </div>
-                  {order?.isDelivered ? (
+                  
                     <Message variant='success'>
-                      Delivered on{' '}
-                      {new Date(order?.deliveredAt).toLocaleString()}
+                      Delivery Status: {order.deliveryStatus}
                     </Message>
-                  ) : (
-                    <Message variant={'danger'}>{'Not Delivered'}</Message>
-                  )}
+                  
+                  
+                
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <h2>Payment Method </h2>
@@ -250,7 +250,7 @@ const paymentHandler = async e => {
                 </ListGroup.Item>
                 
                 <ListGroup>
-                {order?.isDelivered===false ? (
+                {order?.deliveryStatus==="Delivered" ? (
                 <ListGroup.Item>
            
             <h2>Return the Item</h2>

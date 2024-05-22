@@ -79,6 +79,12 @@ function FilterList() {
     dispatch(filterProduct(input));
   };
 
+  // const searchProductBySizeHandler = e => {
+  //   console.log("invoked filter"+input);
+  //   e.preventDefault();
+  //   dispatch(searchBySize(input));
+  // };
+
   const clearSearchHandler = () => {
     dispatch(clearSearch());
     setInput('');
@@ -125,12 +131,38 @@ function FilterList() {
             <MenuItem value="casual">Casual</MenuItem>
             <MenuItem value="formal">Formal</MenuItem>
             <MenuItem value="sneakers">Sneakers</MenuItem>
+            <ListSubheader>Size</ListSubheader>
+            <MenuItem value="5">5</MenuItem>
+            <MenuItem value="6">6</MenuItem>
+            <MenuItem value="7">7</MenuItem>
+            <MenuItem value="8">8</MenuItem>
           </Select>
         </FormControl>
         <Button type='submit' variant='contained' color='warning' style={{ marginBottom: '10px' }}>
           Apply Filter
         </Button>
       </form>
+      {/* <form onSubmit={searchProductBySizeHandler}>
+        <FormControl variant="outlined" sx={{ minWidth: 120 }}>
+          <InputLabel id="select-filter-label">Filter</InputLabel>
+          
+          <Select
+            labelId="select-filter-label"
+            id="select"
+            value={selectedValue}
+            onChange={handleChange}
+            label="Filter"
+          >
+            <ListSubheader>Size</ListSubheader>
+            <MenuItem value="casual">5</MenuItem>
+            <MenuItem value="formal">6</MenuItem>
+            <MenuItem value="sneakers">7</MenuItem>
+          </Select>
+        </FormControl>
+        <Button type='submit' variant='contained' color='warning' style={{ marginBottom: '10px' }}>
+          Apply Filter
+        </Button>
+      </form> */}
       <Button type='button' variant='contained' color='warning' onClick={clearSearchHandler} style={{ marginBottom: '10px' }}>
         Clear Filter
       </Button>

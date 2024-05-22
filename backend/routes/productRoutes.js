@@ -1,6 +1,7 @@
 import express, { query } from 'express';
 import {
   getProducts,
+  //getProductsBySize,
   getProduct,
   deleteProduct,
   createProduct,
@@ -26,6 +27,9 @@ const validator = {
     }),
     check('search').optional().trim().escape()
   ],
+  
+
+
   createProduct: [
     check('name').trim().notEmpty().withMessage('Name is required').escape(),
     check('image').notEmpty().withMessage('Image is required'),
@@ -86,6 +90,7 @@ router.route('/')
   .post(validator.createProduct, validateRequest, protect, admin, createProduct)
   .get(validator.getProducts, validateRequest, getProducts);
 router.get('/top', getTopProducts);
+//router.get(validator.getProductsBySize,validateRequest,getProductsBySize);
 router.post('/reviews/:id', validator.createProductReview, validateRequest, protect, createProductReview);
 router
   .route('/:id')

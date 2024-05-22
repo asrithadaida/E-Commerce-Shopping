@@ -10,6 +10,13 @@ export const productApiSlice = apiSlice.injectEndpoints({
       }),
       providesTags: ['Product']
     }),
+    // getProductsBySize: builder.query({
+    //   query: ({ limit, skip, searchBySize }) => ({
+    //     url: PRODUCTS_URL,
+    //     params: { limit, skip, searchBySize }
+    //   }),
+    //   providesTags: ['Product']
+    // }),
     getTopProducts: builder.query({
       query: () => ({
         url: `${PRODUCTS_URL}/top`
@@ -76,6 +83,7 @@ export const productApiSlice = apiSlice.injectEndpoints({
 
 export const {
   useGetProductsQuery,
+ // useGetProductsBySizeQuery,
   useGetProductDetailsQuery,
   useCreateProductMutation,
   useDeleteProductMutation,

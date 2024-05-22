@@ -14,8 +14,45 @@ const getProducts = async (req, res, next) => {
     const skip = Number(req.query.skip) || 0;
     const search = req.query.search || '';
 
+    const query = {
+      $or: [
+        { name: { $regex: search, $options: 'i' } },
+        { size: { $elemMatch: {$regex: search, $options: 'i' } }}
+      ]
+    };
+
+    const products = await Product.find(query)
+      .limit(limit > maxLimit ? maxLimit : limit)
+      .skip(skip > maxSkip ? maxSkip : skip < 0 ? 0 : skip);
+
+    if (!products || products.length === 0) {
+      res.statusCode = 404;
+      throw new Error('Products not found!');
+    }
+
+    res.status(200).json({
+      products,
+      total,
+      maxLimit,
+      maxSkip
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/*
+const getProductsBySize = async (req, res, next) => {
+  try {
+    const total = await Product.countDocuments();
+    const maxLimit = process.env.PAGINATION_MAX_LIMIT;
+    const maxSkip = total === 0 ? 0 : total - 1;
+    const limit = Number(req.query.limit) || maxLimit;
+    const skip = Number(req.query.skip) || 0;
+    const searchBySize = req.query.searchBySize || '';
+
     const products = await Product.find({
-      name: { $regex: search, $options: 'i' }
+      size: { $elemMatch: { $regex: searchBySize, $options: 'i' }}
     })
       .limit(limit > maxLimit ? maxLimit : limit)
       .skip(skip > maxSkip ? maxSkip : skip < 0 ? 0 : skip);
@@ -35,6 +72,9 @@ const getProducts = async (req, res, next) => {
     next(error);
   }
 };
+*/
+
+
 
 // @desc     Fetch top products
 // @method   GET
@@ -213,6 +253,7 @@ const createProductReview = async (req, res, next) => {
 
 export {
   getProducts,
+//  getProductsBySize,
   getProduct,
   createProduct,
   updateProduct,

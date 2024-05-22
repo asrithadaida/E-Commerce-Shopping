@@ -10,6 +10,13 @@ export const productApiSlice = apiSlice.injectEndpoints({
       }),
       providesTags: ['Product']
     }),
+    getProductsBySize: builder.query({
+      query: ({ limit, skip, search }) => ({
+        url: PRODUCTS_URL,
+        params: { limit, skip, search }
+      }),
+      providesTags: ['Product']
+    }),
     getTopProducts: builder.query({
       query: () => ({
         url: `${PRODUCTS_URL}/top`

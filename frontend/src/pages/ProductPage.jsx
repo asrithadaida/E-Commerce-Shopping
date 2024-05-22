@@ -132,11 +132,16 @@ const ProductPage = () => {
                   <strong> About this item:</strong>
                   {product.description}
                 </ListGroup.Item>
-                {/* <ListGroup.Item>
+                { <ListGroup.Item>
                   <strong>Size</strong>
-                  {product.size.map(val=><span>`{val},  `</span>)}
+                  {product.size.map((item, index) => (
+          <li key={index}>
+            {/* Display item and its index */}
+            {`${item[0]}`}
+          </li>
+        ))}
 
-                </ListGroup.Item> */}
+      </ListGroup.Item> }
               </ListGroup>
             </Col>
             <Col md={3}>

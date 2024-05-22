@@ -14,14 +14,30 @@ const order = async (req, res, next) => {
       key_secret: process.env.RAZORPAY_KEY_SECRET
     });
 
+<<<<<<< Updated upstream
     const options = req.body;
+=======
+<<<<<<< HEAD
+     const options = req.body;
+=======
+    const options = req.body;
+>>>>>>> f22cab18fada9be6e372bbff323fe9ced25f0833
+>>>>>>> Stashed changes
 
      const order = await razorpay.orders.create(options);
 
      if (!order) {
        res.statusCode = 500;
        throw new Error('No order');
+<<<<<<< Updated upstream
      }
+=======
+<<<<<<< HEAD
+   }
+=======
+     }
+>>>>>>> f22cab18fada9be6e372bbff323fe9ced25f0833
+>>>>>>> Stashed changes
      res.status(201).json(order);
    } catch (error) {
      next(error);
