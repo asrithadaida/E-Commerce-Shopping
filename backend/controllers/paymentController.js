@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 import Razorpay from 'razorpay';
-/*
+
 const config = (req, res) =>
   res.send({
     razorpayKeyId: process.env.RAZORPAY_KEY_ID,
@@ -14,23 +14,23 @@ const order = async (req, res, next) => {
       key_secret: process.env.RAZORPAY_KEY_SECRET
     });
 
-  //   const options = req.body;
+    const options = req.body;
 
-  //   const order = await razorpay.orders.create(options);
+     const order = await razorpay.orders.create(options);
 
-  //   if (!order) {
-  //     res.statusCode = 500;
-  //     throw new Error('No order');
-  //   }
-  //   res.status(201).json(order);
-  // } catch (error) {
-  //   next(error);
-  // }
+     if (!order) {
+       res.statusCode = 500;
+       throw new Error('No order');
+     }
+     res.status(201).json(order);
+   } catch (error) {
+     next(error);
+   }
 };
 
 
 const validate = (req, res) => {
-/*  const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
+  const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
     req.body;
 
   const generatedSignature = crypto
@@ -43,7 +43,7 @@ const validate = (req, res) => {
     res.statusCode = 400;
     throw new Error('payment is not legit!');
   }
- */ 
+ 
   res.status(201).json({
    // id: razorpay_payment_id,
     status: 'success',

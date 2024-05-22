@@ -4,54 +4,72 @@ import axios from 'axios';
 
 const PasswordEncryption = () => {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setIsLoading(true);
-
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
     try {
-      // Encrypt password before sending to the server
-      const encryptedPassword = encryptPassword(password);
-      await axios.post('/api/register', { username, password: encryptedPassword });
-      console.log('Registration successful');
+      const encryptedPassword = btoa(password); // Simulate encryption (replace with actual encryption logic if needed)
+      const response = await axios.post('/api/register', {
+        username,
+        email,
+        password: encryptedPassword,
+      });
+      console.log('Registration successful:', response.data);
+      // Optionally, redirect the user to a different page upon successful registration
     } catch (error) {
       console.error('Registration failed:', error);
-    } finally {
-      setIsLoading(false);
+      setError('Registration failed. Please try again.');
     }
   };
 
-  // Dummy encryption function (replace with your actual encryption logic)
-  const encryptPassword = (password) => {
-    // Placeholder encryption logic (e.g., reversing the password)
-    return password.split('').reverse().join('');
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleRegister}>
       <div>
         <label htmlFor="username">Username</label>
         <input
-          id="username"
           type="text"
+          id="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
       </div>
       <div>
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div>
         <label htmlFor="password">Password</label>
         <input
-          id="password"
           type="password"
+          id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <button type="submit" disabled={isLoading}>
-        {isLoading ? 'Submitting...' : 'Submit'}
-      </button>
+      <div>
+        <label htmlFor="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
+      </div>
+      <button type="submit" data-testid="register-button">Register</button>
+      {error && <p>{error}</p>}
     </form>
   );
 };

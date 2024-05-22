@@ -21,10 +21,13 @@ const UserRegistration = () => {
         email,
         password,
       });
-      console.log('Registration successful:', response.data);
+      //console.log('Registration successful:', response.data);
       // Optionally, redirect the user to a different page upon successful registration
     } catch (error) {
       console.error('Registration failed:', error);
+      if (error.response) {
+        console.log('Error response:', error.response); // Additional console error logging
+      }
       setError('Registration failed. Please try again.');
     }
   };
