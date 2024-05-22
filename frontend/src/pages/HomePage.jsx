@@ -14,7 +14,7 @@ const HomePage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
   const [total, setTotal] = useState(0);
-  const [limit, setLimit] = useState(4);
+  const [limit, setLimit] = useState(12);
   const [skip, setSkip] = useState(0);
   const { search } = useSelector(state => state.search);
   const [sortBy, setSortBy] = useState(null); // State to manage sorting order
@@ -48,7 +48,7 @@ const HomePage = () => {
       setNewData(sort)
     }
     setNewData(sorted)
-    
+
   }
   }, [data, sortBy])
 
@@ -81,6 +81,19 @@ const HomePage = () => {
           <Row>
             <Col md={2}>
               <FilterList />
+              <Row className="mt-3">
+              <Row>
+              <Button onClick={() => toggleSortOrder('asc')}>
+                Sort by Min Price
+              </Button>
+              </Row>
+              <Row>
+              <Button onClick={() => toggleSortOrder('desc')}>
+                Sort by Max Price
+              </Button>
+              </Row>
+            
+          </Row>
             </Col>
             <Col>
               <Row>
@@ -92,18 +105,7 @@ const HomePage = () => {
               </Row>
             </Col>
           </Row>
-          <Row className="mt-3">
-            <Col>
-              <Button onClick={() => toggleSortOrder('asc')}>
-                Sort by Min Price
-              </Button>
-            </Col>
-            <Col>
-              <Button onClick={() => toggleSortOrder('desc')}>
-                Sort by Max Price
-              </Button>
-            </Col>
-          </Row>
+         
           {totalPage > 1 && !search && (
             <Paginate
               currentPage={currentPage}

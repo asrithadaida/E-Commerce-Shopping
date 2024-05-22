@@ -39,8 +39,8 @@ const ShippingPage = () => {
       <h1>Shipping</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group className='mb-3' controlId='address'>
-          <Form.Label id='address'>Address</Form.Label>
-          <Form.Control
+          <Form.Label >Address</Form.Label>
+          <Form.Control id='address'
             value={address}
             type='text'
             placeholder='Enter address'
@@ -48,8 +48,8 @@ const ShippingPage = () => {
           />
         </Form.Group>
         <Form.Group className='mb-3' controlId='city'>
-          <Form.Label id='city'>City</Form.Label>
-          <Form.Control
+          <Form.Label >City</Form.Label>
+          <Form.Control id='city'
             value={city}
             type='text'
             placeholder='Enter city'
@@ -57,8 +57,8 @@ const ShippingPage = () => {
           />
         </Form.Group>
         <Form.Group className='mb-3' controlId='postalCode'>
-          <Form.Label id='postalcode'>Postal Code</Form.Label>
-          <Form.Control
+          <Form.Label >Postal Code</Form.Label>
+          <Form.Control id='postalcode'
             value={postalCode}
             type='text'
             placeholder='Enter city'
@@ -66,8 +66,8 @@ const ShippingPage = () => {
           />
         </Form.Group>
         <Form.Group className='mb-3' controlId='country'>
-          <Form.Label id='country'>Country</Form.Label>
-          <Form.Control
+          <Form.Label >Country</Form.Label>
+          <Form.Control id='country'
             value={country}
             type='text'
             placeholder='Enter city'

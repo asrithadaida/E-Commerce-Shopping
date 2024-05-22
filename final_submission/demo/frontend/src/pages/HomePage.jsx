@@ -26,6 +26,8 @@ const HomePage = () => {
     search
   });
 
+  /*
+
   useEffect(() => {
     if (data) {
       setLimit(4);
@@ -53,7 +55,7 @@ const HomePage = () => {
         <>
           {/* {!search && <ProductCarousel />} */}
           <Meta />
-        {/*  <h1>Latest Products</h1> */}
+        {/*  <h1>Latest Products</h1> 
           <Row>
             {data.products.map(product => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
@@ -75,15 +77,20 @@ const HomePage = () => {
 };
 
 export default HomePage; 
+*/
 
-/*import React from 'react';
+import React from 'react';
 
 function HomePage() {
-  return (
-    <div>
-      <h1>Welcome to Happy Feet!!!</h1>
-    </div>
-  );
+  <Row>
+            {data.products.map(product => (
+              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                <Product product={product} />
+              </Col>
+            ))}
+          </Row>
+  
 }
+        };
 
-export default HomePage; */
+export default HomePage; 
