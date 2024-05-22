@@ -82,12 +82,13 @@ const HomePage = () => {
             <Col md={2}>
               <FilterList />
               <Row className="mt-3">
-              <Row>
+              Sort
+              <Row style={{ marginBottom: '10px' }}>
               <Button onClick={() => toggleSortOrder('asc')}>
                 Sort by Min Price
               </Button>
               </Row>
-              <Row>
+              <Row style={{ marginBottom: '10px' }}>
               <Button onClick={() => toggleSortOrder('desc')}>
                 Sort by Max Price
               </Button>

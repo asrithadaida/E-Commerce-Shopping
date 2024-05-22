@@ -65,7 +65,7 @@ import { FaSearch, FaTimes } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import {  clearFilter } from '../slices/filterProductSlice';
 import { searchProduct, clearSearch, filterProduct} from '../slices/searchProductSlice';
-import { Button, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import { Button, FormControl, InputLabel, MenuItem, Select, ListSubheader } from '@mui/material';
 
 
 function FilterList() {
@@ -113,6 +113,7 @@ function FilterList() {
       <form onSubmit={searchProductHandler}>
         <FormControl variant="outlined" sx={{ minWidth: 120 }}>
           <InputLabel id="select-filter-label">Filter</InputLabel>
+          
           <Select
             labelId="select-filter-label"
             id="select"
@@ -120,16 +121,17 @@ function FilterList() {
             onChange={handleChange}
             label="Filter"
           >
+            <ListSubheader>Categories</ListSubheader>
             <MenuItem value="casual">Casual</MenuItem>
             <MenuItem value="formal">Formal</MenuItem>
             <MenuItem value="sneakers">Sneakers</MenuItem>
           </Select>
         </FormControl>
-        <Button type='submit' variant='contained' color='warning'>
+        <Button type='submit' variant='contained' color='warning' style={{ marginBottom: '10px' }}>
           Apply Filter
         </Button>
       </form>
-      <Button type='button' variant='contained' color='warning' onClick={clearSearchHandler}>
+      <Button type='button' variant='contained' color='warning' onClick={clearSearchHandler} style={{ marginBottom: '10px' }}>
         Clear Filter
       </Button>
     </div>
